@@ -20,7 +20,6 @@ def increment_counter():
     return counter
 
 
-
 def new_counter():
     """
     Divides counter in half
@@ -31,7 +30,7 @@ def new_counter():
     return counter
 
 
-def new_list_builder():
+def insert_shift_array():
     """
     builds new list
     """
@@ -49,4 +48,4 @@ def new_list_builder():
 if __name__ == '__main__':
     increment_counter()
     new_counter()
-    new_list_builder()
+    insert_shift_array()
