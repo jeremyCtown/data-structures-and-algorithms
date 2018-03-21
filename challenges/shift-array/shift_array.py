@@ -37,11 +37,11 @@ def insert_shift_array():
     global new_list
     for i in old_list:
         if old_list[i] < counter:
-            new_list = new_list + old_list[i]
+            new_list[i] == old_list[i]
         elif old_list[i] > counter and old_list[i] <= counter + 1:
-            new_list = new_list + new_element
+            new_list[i] == new_element
         else:
-            new_list = new_list + old_list[i]
+            new_list[i] == old_list[i]
     return new_list
 
 
