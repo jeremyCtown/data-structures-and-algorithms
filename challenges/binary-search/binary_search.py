@@ -2,7 +2,7 @@
 
 # Inputs
 search_list = [1, 2, 4, 5, 6]
-new_integer = 3
+new_integer = 4
 
 
 def binary_search():
@@ -12,15 +12,11 @@ def binary_search():
     counter = 0
     for i in search_list:
         counter = counter + 1
-        if counter > len(search_list):
-            print(int(-1))
+        if new_integer == i:
+            print(int(counter-1))
             break
-        if new_integer == search_list[i]:
-            print(int(counter))
-            break
-        # elif counter == len(search_list):
-        #     print(int(-1))
-        #     break
+    else:
+        print(-1)
 
 
 binary_search()

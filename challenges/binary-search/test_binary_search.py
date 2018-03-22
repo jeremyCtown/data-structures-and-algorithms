@@ -8,13 +8,13 @@ def test_if_int_in_list():
     """
     search_list = [1, 2, 4, 5, 6]
     new_integer = 4
-    assert new_integer in search_list == True
-    assert new_integer not in search_list == False
+    assert bs.binary_search == 2
 
-def test_counter_same_as_index():
+
+def test_not_in_list():
     """
-    see if counter is the same as the index number of the matching number
+    see if number is not in list
     """
-    counter = 1
-    i = 1
-    assert counter == i
+    search_list = [1, 2, 4, 5, 6]
+    new_integer = 3
+    assert bs.binary_search == -1
