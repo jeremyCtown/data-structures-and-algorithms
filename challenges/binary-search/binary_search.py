@@ -1,11 +1,8 @@
 
 
 # Inputs
-search_list = [1, 2, 3, 5, 6]
-new_integer = 4
-
-# New variables
-counter = 0
+search_list = [1, 2, 4, 5, 6]
+new_integer = 3
 
 
 def binary_search():
@@ -14,12 +11,16 @@ def binary_search():
     """
     counter = 0
     for i in search_list:
-        counter += 1
-        if search_list[i] == new_integer:
+        counter = counter + 1
+        if counter > len(search_list):
+            print(int(-1))
+            break
+        if new_integer == search_list[i]:
             print(int(counter))
             break
-    else:
-        print(int(-1))
+        # elif counter == len(search_list):
+        #     print(int(-1))
+        #     break
 
 
 binary_search()

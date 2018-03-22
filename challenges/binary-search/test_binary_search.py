@@ -1,54 +1,20 @@
 import pytest
-import shift-array
+import binary_search as bs
 
 
-def test_if_looping_through_list_to_grow_counter_works():
+def test_if_int_in_list():
     """
-    function that tests to see if counter adds up based on list length
+    function that tests to see if the integer is in the list
     """
-    assert shift-array.counter == len(shift-array.old_list)
+    search_list = [1, 2, 4, 5, 6]
+    new_integer = 4
+    assert new_integer in search_list == True
+    assert new_integer not in search_list == False
 
-
-def test_if_add_first_half():
+def test_counter_same_as_index():
     """
-    function that checks to see if the first half of the old list is added
-    to the new list
+    see if counter is the same as the index number of the matching number
     """
-    assert shift-array.new_list/2
-
-
-
-def test_if_not_add_first_half():
-    """
-    function that purposely doesn't add first half
-    """
-
-
-def test_elif_add_middle_index():
-    """
-    function that checks to see if middle index has element added in
-    """
-
-
-def test_elif_not_add_middle_index():
-    """
-    function that checks if it doesn't have middle index in place
-    """
-
-
-def test_else_add_back_half():
-    """
-    function that checks to see if back half is added to list
-    """
-
-
-def test_else_not_add_back_half():
-    """
-    function that checks to see if back half isn't added to list
-    """
-
-def test_length_of_final_list():
-    """
-    function that checks final list length
-    """
-
+    counter = 1
+    i = 1
+    assert counter == i
