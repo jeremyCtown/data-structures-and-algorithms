@@ -1,10 +1,10 @@
-# Insert and shift middle index of array
+# Binary Search
 
-Learn to step away from your tools and do it just like the original cavemen - without any helper functions!
+Did you know that using list[i] in Python is completely unnecessary? I do now!
 
 ## Challenge
-Write a function called insertShiftArray which takes in an array and the value to be added. Without utilizing any of the built-in methods available to your language, return an array with the new value added at the middle index.
+Write a function called BinarySearch which takes in 2 parameters: a sorted array and the search key. Without utilizing any of the built-in methods available to your language, return the index of the array’s element that is equal to the search key, or -1 if the element does not exist.
 
 ## Solution
 
-![](../../assets/02-shift-array.jpg)
+![](../../assets/03-binary-search.jpg)

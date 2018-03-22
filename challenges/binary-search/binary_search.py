@@ -1,11 +1,10 @@
 
-
 # Inputs
 search_list = [1, 2, 4, 5, 6]
 new_integer = 4
 
 
-def binary_search():
+def binary_search(search_list, new_integer):
     """
     Increments counter to equal list length
     """
@@ -19,4 +18,4 @@ def binary_search():
         print(-1)
 
 
-binary_search()
+binary_search(search_list, new_integer)
