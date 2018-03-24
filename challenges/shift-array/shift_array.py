@@ -1,23 +1,26 @@
 
 
 # Inputs
-old_list = [1, 2, 4, 5, 6]
-new_element = 4
-
-# New variables
-counter = 0
-new_list = []
+test_list = [1, 2, 4, 5, 6]
+test_num = 3
 
 
-def increment_counter():
+class ShiftArray:
     """
-    Increments counter to equal list length
+    new class to complete challenge
     """
-    global counter
-    for i in old_list:
-        counter += 1
-    print(counter)
-    return counter
+    def __init__(self, test_list, test_num):
+        self.counter = 0
+        self.new_list = ['']
+
+    def increment_counter(self):
+        """
+        Increments counter to equal list length
+        """
+        for i in test_list:
+            self.counter += 1
+        # print(self.counter)
+        return self.counter
 
 
 def new_counter():
@@ -35,13 +38,13 @@ def insert_shift_array():
     builds new list
     """
     global new_list
-    for i in old_list:
-        if old_list[i] < counter:
-            new_list[i] == old_list[i]
-        elif old_list[i] > counter and old_list[i] <= counter + 1:
+    for i in test_list:
+        if test_list[i] < counter:
+            new_list[i] == test_list[i]
+        elif test_list[i] > counter and test_list[i] <= counter + 1:
             new_list[i] == new_element
         else:
-            new_list[i] == old_list[i]
+            new_list[i] == test_list[i]
     return new_list
 
 
