@@ -1,12 +1,15 @@
 import pytest
-import shift-array
+# import shift-array
+from shift_array import increment_counter as ic
 
-
-def test_if_looping_through_list_to_grow_counter_works():
+def test_increment_counter_add_one_to_list_len:
     """
     function that tests to see if counter adds up based on list length
     """
-    assert shift-array.counter == len(shift-array.old_list)
+
+    counter = 0
+    old_list = [1, 2, 3]
+    assert test_counter =
 
 
 def test_if_add_first_half():
