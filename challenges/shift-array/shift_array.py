@@ -1,51 +1,58 @@
+test_list = [3, 4, 5, 7, 8, 9]
+test_num = 6
 
 
-# Inputs
-old_list = [1, 2, 4, 5, 6]
-new_element = 4
-
-# New variables
-counter = 0
-new_list = []
-
-
-def increment_counter():
+class ShiftArray:
     """
-    Increments counter to equal list length
+    new class to complete challenge
     """
-    global counter
-    for i in old_list:
-        counter += 1
-    print(counter)
-    return counter
+    def __init__(self, test_list, test_num):
+        self.counter = 0
+        self.zero = 0
+        self.new_list = test_list + [0]
+        self.insert_index = 0
+        self.splitter = 0
+        self.test_list = test_list
+        self.test_num = test_num
 
+    def increment_counter(self):
+        """
+        Increments counter to equal list length
+        """
+        for i in self.test_list:
+            self.counter += 1
+            self.splitter = self.counter
+        self.split_counter(self.splitter)
+        return self.counter
 
-def new_counter():
-    """
-    Divides counter in half
-    """
-    global counter
-    counter = counter/2
-    print(counter)
-    return counter
+    def split_counter(self, splitter):
+        """
+        Divides counter in half
+        """
+        self.insert_index = float(splitter)/2
+        self.insert_shift_array(self.test_list, self.test_num, self.insert_index)
+        return self.insert_index
 
+    def insert_shift_array(self, test_list, test_num, splitter):
+        """
+        builds new list
+        """
 
-def insert_shift_array():
-    """
-    builds new list
-    """
-    global new_list
-    for i in old_list:
-        if old_list[i] < counter:
-            new_list[i] == old_list[i]
-        elif old_list[i] > counter and old_list[i] <= counter + 1:
-            new_list[i] == new_element
-        else:
-            new_list[i] == old_list[i]
-    return new_list
+        for i in test_list:
+            if self.zero < splitter:
+                self.new_list[self.zero] = i
+                self.zero += 1
+            elif (splitter + 1) > self.zero >= splitter:
+                self.new_list[self.zero] = test_num
+                self.new_list[self.zero + 1] = i
+                self.zero += 2
+            else:
+                self.new_list[self.zero] = i
+                self.zero += 1
+        print(self.new_list)
+        return(self.new_list)
 
 
 if __name__ == '__main__':
-    increment_counter()
-    new_counter()
-    insert_shift_array()
+    x = ShiftArray(test_list, test_num)
+    x.increment_counter()
