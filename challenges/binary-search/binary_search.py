@@ -1,7 +1,7 @@
 
 # Inputs
 test_list = [1, 2, 4, 5, 6]
-test_num = 4
+test_num = 7
 
 
 class BinarySearch:
@@ -14,7 +14,7 @@ class BinarySearch:
         self.test_num = test_num
         self.answer = 0
 
-    def binary_search(self, test_list, test_num):
+    def binary_search(self):
         """
         Increments counter to equal list length
         """
@@ -22,9 +22,10 @@ class BinarySearch:
             self.counter = self.counter + 1
             if self.test_num == i:
                 self.answer = self.counter - 1
-                return(self.answer)
+                break
         else:
             self.answer = -1
+        print(self.answer)
         return(self.answer)
 
 

@@ -25,7 +25,7 @@ def test_if_int_in_list(test_bs):
     """
     function that tests to see if the integer is in the list
     """
-    test_bs.binary_search(test_bs.test_list, test_bs.test_num)
+    test_bs.binary_search()
     assert test_bs.answer == 3
 
 
@@ -33,5 +33,5 @@ def test_not_in_list(test_bs_fail):
     """
     see if number is not in list
     """
-    test_bs_fail.binary_search(test_bs_fail.test_list, test_bs_fail.test_num)
+    test_bs_fail.binary_search()
     assert test_bs_fail.answer == -1
