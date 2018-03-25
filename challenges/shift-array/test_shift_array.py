@@ -3,7 +3,7 @@ import pytest
 from shift_array import ShiftArray as SA
 
 @pytest.fixture
-def empty_sa():
+def test_sa():
     return SA(test_list, test_num)
 
 
@@ -11,28 +11,28 @@ test_list = [1, 2, 4, 5, 6]
 test_num = 3
 
 
-def test_sa_counter(empty_sa):
+def test_sa_counter(test_sa):
     """
     function that tests to see if counter adds up based on list length
     """
 
-    assert empty_sa.counter == 0
-    # old_list = [1, 2, 3]
-    # assert test_increment_counter == 3
+    assert test_sa.counter == 0
+    test_sa.increment_counter(test_list)
+    assert test_sa.counter == 5
 
 
-def test_sa_new_list_empty(empty_sa):
+def test_sa_new_list_empty(test_sa):
     """
     function to ensure empty list to populate is available
     """
-    assert empty_sa.new_list == ['']
+    assert test_sa.new_list == ['']
 
 
-def test_increment_counter(empty_sa):
-    """
-    function to ensure counter is increasing
-    """
-    assert empty_sa.increment_counter.counter == 5
+# def test_increment_counter(test_sa):
+#     """
+#     function to ensure counter is increasing
+#     """
+#     assert test_sa.increment_counter == 5
 
 
 # def test_if_add_first_half():

@@ -13,14 +13,14 @@ class ShiftArray:
         self.counter = 0
         self.new_list = ['']
 
-    def increment_counter(self):
+    def increment_counter(self, test_list):
         """
         Increments counter to equal list length
         """
         for i in test_list:
             self.counter += 1
-        # print(self.counter)
-        return self.counter
+        print(self.counter)
+        return int(self.counter)
 
 
 def new_counter():
@@ -49,6 +49,7 @@ def insert_shift_array():
 
 
 if __name__ == '__main__':
-    increment_counter()
+    x = ShiftArray(test_list, test_num)
+    x.increment_counter()
     new_counter()
     insert_shift_array()
