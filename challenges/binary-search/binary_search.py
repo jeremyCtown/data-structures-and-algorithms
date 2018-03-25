@@ -21,10 +21,8 @@ class BinarySearch:
         for i in self.test_list:
             self.counter = self.counter + 1
             if self.test_num == i:
-                self.answer = int(self.counter-1)
-                # print(self.answer)
-                # return(self.answer)
-                # # break
+                self.answer = self.counter - 1
+                return(self.answer)
         else:
             self.answer = -1
         return(self.answer)

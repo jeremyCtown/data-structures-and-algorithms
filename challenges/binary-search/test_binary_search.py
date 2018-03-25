@@ -15,12 +15,12 @@ def test_init_counter_is_zero(test_bs):
     assert test_bs.counter == 0
 
 
-def test_if_int_in_list():
+def test_if_int_in_list(test_bs):
     """
     function that tests to see if the integer is in the list
     """
     test_bs.binary_search(test_bs.test_list, test_bs.test_num)
-    assert test_bs.answer == 6
+    assert test_bs.answer == 3
 
 
 # def test_not_in_list():
