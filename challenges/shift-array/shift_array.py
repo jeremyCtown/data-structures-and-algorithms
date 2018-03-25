@@ -19,18 +19,14 @@ class ShiftArray:
         """
         for i in test_list:
             self.counter += 1
-        print(self.counter)
-        return int(self.counter)
+        return (self.counter)
 
-
-def new_counter():
-    """
-    Divides counter in half
-    """
-    global counter
-    counter = counter/2
-    print(counter)
-    return counter
+    def split_counter(self):
+        """
+        Divides counter in half
+        """
+        self.counter = float(float(self.counter)/2)
+        return self.counter
 
 
 def insert_shift_array():

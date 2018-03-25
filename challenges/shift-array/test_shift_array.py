@@ -19,6 +19,8 @@ def test_sa_counter(test_sa):
     assert test_sa.counter == 0
     test_sa.increment_counter(test_list)
     assert test_sa.counter == 5
+    test_sa.split_counter()
+    assert test_sa.counter == 2.5
 
 
 def test_sa_new_list_empty(test_sa):
@@ -27,12 +29,6 @@ def test_sa_new_list_empty(test_sa):
     """
     assert test_sa.new_list == ['']
 
-
-# def test_increment_counter(test_sa):
-#     """
-#     function to ensure counter is increasing
-#     """
-#     assert test_sa.increment_counter == 5
 
 
 # def test_if_add_first_half():
