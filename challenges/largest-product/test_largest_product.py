@@ -16,13 +16,15 @@ def test_input_is_valid(test_lp):
 def test_multiply_inner_lists(test_lp):
     test_lp.multiply_inner_lists()
     assert test_lp.counter == 4
+    assert test_lp.new_list[0] is not str
     assert test_lp.new_list == [2, 6, 12, 20]
 
 
 def test_largest_product(test_lp):
     test_lp.new_list = [2, 6, 12, 20]
-    test_lp.largest_product(test_lp.new_list)
+    test_lp.largest_product()
     assert test_lp.new_list == [2, 6, 12, 20]
+    assert test_lp.answer is not str
     assert test_lp.answer == 20
 
 

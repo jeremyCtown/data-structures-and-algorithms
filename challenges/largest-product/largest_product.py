@@ -16,7 +16,6 @@ class LargestProduct:
         self.new_list = test_list
         self.test_list = test_list
 
-
     def multiply_inner_lists(self):
         """
         sums inner lists from existing list and returns a new list
@@ -26,7 +25,6 @@ class LargestProduct:
             self.counter += 1
         self.largest_product()
         return self.new_list
-
 
     def largest_product(self):
         """
