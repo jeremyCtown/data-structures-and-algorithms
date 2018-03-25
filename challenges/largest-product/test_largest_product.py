@@ -26,20 +26,3 @@ def test_largest_product(test_lp):
     assert test_lp.new_list == [2, 6, 12, 20]
     assert test_lp.answer is not str
     assert test_lp.answer == 20
-
-
-# def test_if_int_in_list():
-#     """
-#     test if two numbers at i add together
-#     """
-#     test_list = [2, 3]
-#     assert ls.sum_inner_lists == 6
-
-
-
-# def test_largest_product():
-#     """
-#     see if number is not in list
-#     """
-#     test_list = [12, 13]
-#     assert bs.binary_search == 13

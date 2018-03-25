@@ -1,10 +1,7 @@
 
 # Inputs
-counter = 0
-new_list = [0]
-answer = 0
-
 test_list = [[1, 2], [2, 3], [3, 4], [4, 5]]
+
 
 class LargestProduct:
     """
@@ -33,6 +30,7 @@ class LargestProduct:
         for i in self.new_list:
             if self.answer < i:
                 self.answer = i
+        print(self.answer)
         return self.answer
 
 
