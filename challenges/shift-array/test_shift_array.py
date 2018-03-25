@@ -16,18 +16,21 @@ def test_sa_counter(test_sa):
     function that tests to see if counter adds up based on list length
     """
 
-    assert test_sa.counter == 0
     test_sa.increment_counter(test_list)
     assert test_sa.counter == 5
-    test_sa.split_counter()
-    assert test_sa.counter == 2.5
 
 
-def test_sa_new_list_empty(test_sa):
+def test_sa_insert_index(test_sa):
+    test_sa.split_counter(5)
+    assert test_sa.insert_index == 2
+
+
+def test_sa_new_list(test_sa):
     """
     function to ensure empty list to populate is available
     """
-    assert test_sa.new_list == ['']
+    test_sa.insert_shift_array(test_list, test_num, 2)
+    assert test_sa.new_list == [1, 2]
 
 
 

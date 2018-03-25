@@ -11,7 +11,9 @@ class ShiftArray:
     """
     def __init__(self, test_list, test_num):
         self.counter = 0
+        self.zero = 0
         self.new_list = ['']
+        self.insert_index = 0
 
     def increment_counter(self, test_list):
         """
@@ -19,33 +21,34 @@ class ShiftArray:
         """
         for i in test_list:
             self.counter += 1
-        return (self.counter)
+            self.splitter = self.counter
+        self.split_counter(self.splitter)
+        return self.counter
 
-    def split_counter(self):
+    def split_counter(self, splitter):
         """
         Divides counter in half
         """
-        self.counter = float(float(self.counter)/2)
-        return self.counter
+        self.insert_index = splitter/2
+        self.insert_shift_array(test_list, test_num, self.insert_index)
 
-
-def insert_shift_array():
-    """
-    builds new list
-    """
-    global new_list
-    for i in test_list:
-        if test_list[i] < counter:
-            new_list[i] == test_list[i]
-        elif test_list[i] > counter and test_list[i] <= counter + 1:
-            new_list[i] == new_element
-        else:
-            new_list[i] == test_list[i]
-    return new_list
+    def insert_shift_array(self, test_list, test_num, splitter):
+        """
+        builds new list
+        """
+        for i in test_list:
+            if test_list[self.zero] < self.insert_index:
+                self.new_list[self.zero] == i
+                self.zero += 1
+        #     elif test_list[i] > self.counter and test_list[i] <= self.counter + 1:
+        #         self.new_list[i] == test_num
+        #     else:
+        #         self.new_list[i] == test_list[i]
+        # return self.new_list
 
 
 if __name__ == '__main__':
     x = ShiftArray(test_list, test_num)
     x.increment_counter()
-    new_counter()
-    insert_shift_array()
+    # new_counter()
+    # insert_shift_array()
