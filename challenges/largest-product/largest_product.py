@@ -6,28 +6,38 @@ answer = 0
 
 test_list = [[1, 2], [2, 3], [3, 4], [4, 5]]
 
-
-def sum_inner_lists():
+class LargestProduct:
     """
-    sums inner lists from existing list and returns a new list
+    new class to complete challenge
     """
-    # new_list = [0]
-    # counter = 0
-    for i in test_list:
-        print(i)
-        i = (i[0]*i[1])
-        return i
+    def __init__(self, test_list):
+        self.counter = 0
+        self.answer = 0
+        self.new_list = test_list
+        self.test_list = test_list
 
 
-def largest_product(new_list):
-    """
-    loops through new_list and returns largest number
-    """
-    answer = 0
-    for i in new_list:
-        if answer < i:
-            answer = i
-    return answer
+    def multiply_inner_lists(self):
+        """
+        sums inner lists from existing list and returns a new list
+        """
+        for i in self.test_list:
+            self.new_list[self.counter] = (i[0]*i[1])
+            self.counter += 1
+        self.largest_product(self.new_list)
+        return self.new_list
 
 
-sum_inner_lists()
+    def largest_product(self, new_list):
+        """
+        loops through new_list and returns largest number
+        """
+        for i in new_list:
+            if self.answer < i:
+                self.answer = i
+        return self.answer
+
+
+if __name__ == '__main__':
+    x = LargestProduct(test_list)
+    x.multiply_inner_lists()
