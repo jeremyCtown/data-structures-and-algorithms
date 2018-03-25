@@ -20,8 +20,9 @@ def test_multiply_inner_lists(test_lp):
 
 
 def test_largest_product(test_lp):
-    test_lp.new_list == [2, 6, 12, 20]
+    test_lp.new_list = [2, 6, 12, 20]
     test_lp.largest_product(test_lp.new_list)
+    assert test_lp.new_list == [2, 6, 12, 20]
     assert test_lp.answer == 20
 
 

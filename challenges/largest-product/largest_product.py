@@ -24,15 +24,15 @@ class LargestProduct:
         for i in self.test_list:
             self.new_list[self.counter] = (i[0]*i[1])
             self.counter += 1
-        self.largest_product(self.new_list)
+        self.largest_product()
         return self.new_list
 
 
-    def largest_product(self, new_list):
+    def largest_product(self):
         """
         loops through new_list and returns largest number
         """
-        for i in new_list:
+        for i in self.new_list:
             if self.answer < i:
                 self.answer = i
         return self.answer
