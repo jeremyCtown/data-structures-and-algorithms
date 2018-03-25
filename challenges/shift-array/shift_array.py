@@ -37,9 +37,14 @@ class ShiftArray:
         builds new list
         """
         for i in test_list:
-            if test_list[self.zero] < self.insert_index:
-                self.new_list[self.zero] == i
+            if self.zero <= splitter:
+                self.new_list[self.zero] = test_list[self.zero]
                 self.zero += 1
+        return self.new_list
+                # return self.zero
+        #         self.new_list[self.zero] == i
+        #         self.zero += 1
+        # return self.new_list
         #     elif test_list[i] > self.counter and test_list[i] <= self.counter + 1:
         #         self.new_list[i] == test_num
         #     else:

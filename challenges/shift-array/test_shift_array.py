@@ -30,6 +30,7 @@ def test_sa_new_list(test_sa):
     function to ensure empty list to populate is available
     """
     test_sa.insert_shift_array(test_list, test_num, 2)
+    assert test_sa.zero == 2
     assert test_sa.new_list == [1, 2]
 
 
