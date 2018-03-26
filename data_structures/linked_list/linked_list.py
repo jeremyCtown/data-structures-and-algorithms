@@ -40,8 +40,6 @@ class LinkedList:
         self._size += 1
         return self._size
 
-
-
     def find(self, data):
         """
         this test searches for an existing piece of data. coding for this came extensively from the link in resources. See README
@@ -56,9 +54,6 @@ class LinkedList:
         if self._current is None:
             raise ValueError("Does not exist")
         return self._current
-
-
-
 
 
 if __name__=='__main__':
