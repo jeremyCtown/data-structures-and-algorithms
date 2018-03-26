@@ -20,9 +20,9 @@ def test_initial_of_list(test_ll):
     assert test_ll.iter == []
 
 
-def test_insert_of_data(test_ll):
+def test_insert_of_val(test_ll):
     test_ll.insert([1, 2, 3, 4])
-    assert test_ll.head.data == [1, 2, 3, 4]
+    assert test_ll.head.val == [1, 2, 3, 4]
 
 
 

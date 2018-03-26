@@ -15,7 +15,7 @@ class LinkedList:
         self._size = 0
         self.iter = iter
 
-    def reverser(self, data):
+    def reverser(self, val):
         for item in reversed(self.iter):
             self.insert(item)
         return self.iter
@@ -32,22 +32,22 @@ class LinkedList:
         """
         return self._size
 
-    def insert(self, data):
+    def insert(self, val):
         """
         Inserts a new node into the linked list when called
         """
-        self.head = Node(data, self.head)
+        self.head = Node(val, self.head)
         self._size += 1
         return self._size
 
-    def find(self, data):
+    def find(self, val):
         """
         this test searches for an existing piece of data. coding for this came extensively from the link in resources. See README
         """
         self._current = self.head
         finder = False
         while self._current and finder is False:
-            if self._current.get_data() == data:
+            if self._current.get_val() == val:
                 finder = True
             else:
                 self._current = self._current.get_next()

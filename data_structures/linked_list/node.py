@@ -1,15 +1,15 @@
 
 class Node:
-    def __init__(self, data, next=None):
-        self.data = data
+    def __init__(self, val, next=None):
+        self.val = val
         self.next = next
 
     def __repr__(self):
-        return '{data}'.format(val=self.data)
+        return '{val}'.format(val=self.val)
 
     def __str__(self):
-        return '{data}'.format(val=self.data)
+        return '{val}'.format(val=self.val)
 
-    def get_data(self):
-        return self.data
+    def get_val(self):
+        return self.val
 
