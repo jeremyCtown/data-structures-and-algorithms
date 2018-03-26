@@ -13,6 +13,7 @@ class LinkedList:
         self._current = None
         self.head = None
         self._size = 0
+        self.iter = iter
 
     def __repr__(self):
         """
@@ -37,3 +38,23 @@ class LinkedList:
         node.next = self.head
         self.head = node
         return self.head
+
+    def reverser(self, data):
+        self.iter = reversed(self.iter)
+        for item in self.iter:
+            self.insert(item)
+        return self.iter
+
+    # def find(self, data)
+    #     """
+    #     Loops through linked list to find if a value exists
+    #     """
+
+
+if __name__=='__main__':
+
+    # Start with the empty list
+    ll = LinkedList()
+    ll.reverser()
+
+
