@@ -1,11 +1,12 @@
 import node as Node
 
+
 class LinkedList:
     """
     This class is used to assign nodes in a linked list
     """
 
-    def __init__(self):
+    def __init__(self, iter=[]):
         """
         this initializes the linked list and creates global variables
         """
@@ -25,9 +26,9 @@ class LinkedList:
         """
         return self._size
 
-    def insert(self, val):
+    def insert(self, data):
         """
         Inserts a new node into the linked list when called
         """
-        self.head = Node(val, self.head)
+        self.head = Node(data, self.head)
         self._size += 1

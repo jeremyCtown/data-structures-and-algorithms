@@ -1,8 +1,11 @@
 
 class Node:
-    def __init__(self, val, next=None):
-        self.val = val
-        self._next = next
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
     def __repr__(self):
-        return '{val}'.format(val=self.val)
+        return '{data}'.format(val=self.data)
+
+    def __str__(self):
+        return '{data}'.format(val=self.data)
