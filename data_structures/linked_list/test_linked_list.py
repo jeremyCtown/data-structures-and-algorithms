@@ -21,4 +21,4 @@ def test_initial_of_list(test_ll):
 
 def test_insert_of_data(test_ll):
     test_ll.insert(2)
-    assert test_ll.head.val == 2
+    assert test_ll.head.data == 2

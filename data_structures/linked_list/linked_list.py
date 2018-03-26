@@ -1,4 +1,4 @@
-import node as Node
+from node import Node as Node
 
 
 class LinkedList:
@@ -30,5 +30,10 @@ class LinkedList:
         """
         Inserts a new node into the linked list when called
         """
-        self.head = Node(data, self.head)
-        self._size += 1
+        # self.head = Node(data, self.head)
+        # self._size += 1
+
+        node = Node(data)
+        node.next = self.head
+        self.head = node
+        return self.head
