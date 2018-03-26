@@ -15,10 +15,8 @@ class LinkedList:
         self._size = 0
         self.iter = iter
 
-    def reverser(self, val):
         for item in reversed(self.iter):
             self.insert(item)
-        return self.iter
 
     def __repr__(self):
         """
@@ -42,18 +40,16 @@ class LinkedList:
 
     def find(self, val):
         """
-        this test searches for an existing piece of data. coding for this came extensively from the link in resources. See README
+        Searches through a list for val and returns the node with that val
         """
-        self._current = self.head
-        finder = False
-        while self._current and finder is False:
-            if self._current.get_val() == val:
-                finder = True
-            else:
-                self._current = self._current.get_next()
-        if self._current is None:
-            raise ValueError("Does not exist")
-        return self._current
+
+        current = self.head
+        while current:
+            if val == current.val:
+                return True
+
+            current = current._next
+        return False
 
 
 if __name__=='__main__':
