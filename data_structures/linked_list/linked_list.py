@@ -15,6 +15,11 @@ class LinkedList:
         self._size = 0
         self.iter = iter
 
+    def reverser(self, data):
+        for item in reversed(self.iter):
+            self.insert(item)
+        return self.iter
+
     def __repr__(self):
         """
         Used to return head and size of linked list when called
@@ -31,30 +36,35 @@ class LinkedList:
         """
         Inserts a new node into the linked list when called
         """
-        # self.head = Node(data, self.head)
-        # self._size += 1
+        self.head = Node(data, self.head)
+        self._size += 1
+        return self._size
 
-        node = Node(data)
-        node.next = self.head
-        self.head = node
-        return self.head
 
-    def reverser(self, data):
-        self.iter = reversed(self.iter)
-        for item in self.iter:
-            self.insert(item)
-        return self.iter
 
-    # def find(self, data)
-    #     """
-    #     Loops through linked list to find if a value exists
-    #     """
+    def find(self, data):
+        """
+        this test searches for an existing piece of data. coding for this came extensively from the link in resources. See README
+        """
+        self._current = self.head
+        finder = False
+        while self._current and finder is False:
+            if self._current.get_data() == data:
+                finder = True
+            else:
+                self._current = self._current.get_next()
+        if self._current is None:
+            raise ValueError("Does not exist")
+        return self._current
+
+
+
 
 
 if __name__=='__main__':
 
     # Start with the empty list
     ll = LinkedList()
-    ll.reverser()
+    ll(1)
 
 
