@@ -15,13 +15,19 @@ class LinkedList:
 
     def __repr__(self):
         """
-        Used to return size of linked list when called
+        Used to return head and size of linked list when called
         """
-        return '<head> => {}'.format(self._size.val)
+        return '<head> => {}, <_size> => {}'.format(self.head.val, self._size.val)
 
     def __len__(self):
+        """
+        returns linked list length when called
+        """
         return self._size
 
     def insert(self, val):
+        """
+        Inserts a new node into the linked list when called
+        """
         self.head = Node(val, self.head)
         self._size += 1
