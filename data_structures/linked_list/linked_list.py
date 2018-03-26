@@ -52,7 +52,7 @@ class LinkedList:
         return False
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
 
     # Start with the empty list
     ll = LinkedList()
