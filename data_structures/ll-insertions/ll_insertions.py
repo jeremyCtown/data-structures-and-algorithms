@@ -84,18 +84,3 @@ class LinkedList:
         if current._next is None:
             raise ValueError("Data not in list")
 
-
-
-
-    def find(self, val):
-        # create a pointer for current => self.head
-        # do a while loop
-        # while current is not none, do a thing
-
-        current = self.head
-        while current:
-            if val == current.val:
-                return True
-
-            current = current._next
-        return False
