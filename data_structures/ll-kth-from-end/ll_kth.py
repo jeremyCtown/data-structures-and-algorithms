@@ -88,18 +88,16 @@ class LinkedList:
         """
         returns node at kth from end
         """
-        ll_len = self._size
-        return self._size
         current = self.head
-        return current
         counter = 0
         answer = 0
-        kth = ll_len - k
+        kth = self._size - k
         while current._next is not None:
             if counter == kth:
                 answer = current
                 break
             else:
                 counter += 1
+                current = current._next
         return answer
 
