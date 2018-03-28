@@ -6,15 +6,10 @@ def test_insert_first_node(empty_ll):
     assert empty_ll.head.val == 2
 
 
-# def test_find_an_int_in_ll(predefined_ll):
-#     assert predefined_ll.find(1) is True
-#     assert predefined_ll.find(11) is False
-
-
-def test_append_adds_to_end(predefined_ll):
-    assert predefined_ll._size == 10
-    assert predefined_ll.append(2) is None
-    assert predefined_ll._size == 11
+def test_append_adds_to_end(long_ll):
+    assert long_ll._size == 10
+    assert long_ll.append(2) is None
+    assert long_ll._size == 11
 
 
 def test_insert_before(small_ll):
@@ -33,6 +28,6 @@ def test_insert_after(small_ll):
     assert small_ll.head._next._next.val == 7
 
 
-def test_kth_from_end(predefined_ll):
-    assert predefined_ll._size == 10
-    assert predefined_ll.kth_from_end(3).val == 8
+def test_kth_from_end(long_ll):
+    assert long_ll._size == 10
+    assert long_ll.kth_from_end(3).val == 8
