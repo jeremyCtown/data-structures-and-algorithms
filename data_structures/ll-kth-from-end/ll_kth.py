@@ -84,3 +84,22 @@ class LinkedList:
         if current._next is None:
             raise ValueError("Data not in list")
 
+    def kth_from_end(self, k):
+        """
+        returns node at kth from end
+        """
+        ll_len = self._size
+        return self._size
+        current = self.head
+        return current
+        counter = 0
+        answer = 0
+        kth = ll_len - k
+        while current._next is not None:
+            if counter == kth:
+                answer = current
+                break
+            else:
+                counter += 1
+        return answer
+
