@@ -115,6 +115,30 @@ class LinkedList:
                 current = current._next
         return answer
 
+    def has_loop(self):
+        """
+        checks if LL has a loop
+        """
+
+        current = self.head
+        fast = self.head
+
+        if current is None:
+            return False
+
+        while current._next is not None:
+            fast = fast._next
+            slow = current
+            if fast is None:
+                return False
+            if fast is slow:
+                return True
+            # else:
+            #     fast = current._next._next
+            #     print('next')
+        else:
+            return False
+
 
 def merge_lists(ll_1, ll_2):
     """
@@ -122,7 +146,6 @@ def merge_lists(ll_1, ll_2):
     """
     baselist = 0
     zipped = 0
-    size = 0
 
     if (ll_1._size >= ll_2._size):
         baselist = ll_1
@@ -144,7 +167,6 @@ def merge_lists(ll_1, ll_2):
         temp = temp._next
         current = current._next
         zipped = zipped._next
-        size += 1
     return baselist.head
 
 

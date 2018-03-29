@@ -1,5 +1,5 @@
 
-import ll_merge as LL
+import ll_find_loop as LL
 
 
 def test_initial_of_list(empty_ll):
@@ -72,3 +72,19 @@ def test_ll_merge_empty(small_ll, empty_ll):
     assert head.val == 5
     assert head._next.val == 6
     assert head._next._next.val == 8
+
+
+def test_find_loop_empty(empty_ll):
+    assert empty_ll.has_loop() is False
+
+
+def test_find_loop_long(long_ll):
+    test = long_ll.has_loop()
+    assert test is False
+
+
+def test_loop_is_true(small_ll):
+    small_ll.head.next.next.next.next = small_ll.head
+    assert small_ll.has_loop is True
+
+

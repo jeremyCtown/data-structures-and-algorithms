@@ -9,3 +9,4 @@ Note: Length or Size are *not* included in standard properties for a LL.
 ## Solution
 
 ![](../../assets/09-ll-find-loop.jpg)
+![](../../assets/09-ll-find-loop-refactor.jpg)
