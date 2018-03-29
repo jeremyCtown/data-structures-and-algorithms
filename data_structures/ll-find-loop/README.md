@@ -1,10 +1,11 @@
-# Linked List Merge Lists
+# Linked List Find Loop
 
-Holy crap I'm tired... wish I could merge some more time in to my day
+Speaking of loops, how many resubmits will it take before we break out of this one?
 
 ## Challenge
-Write a function called mergeLists which takes two linked lists as arguments. Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the single list. Try and keep additional space down to O(1). You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+Write a method for the Linked List class called hasLoop which takes no arguments. Return a boolean that indicates whether or not a circular reference or loop is present in the linked list. Your implementation must not use any additional memory or modify the nodes of the linked list. You have access to the Node class and all the standard properties on the Linked List class as well as the methods created in previous challenges.
+Note: Length or Size are *not* included in standard properties for a LL.
 
 ## Solution
 
-![](../../assets/08-ll-merge-lists.jpg)
+![](../../assets/09-ll-find-loop.jpg)
