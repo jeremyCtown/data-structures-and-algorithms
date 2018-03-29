@@ -31,3 +31,7 @@ def test_insert_after(small_ll):
 def test_kth_from_end(long_ll):
     assert long_ll._size == 10
     assert long_ll.kth_from_end(3).val == 8
+
+
+def test_ll_merge(small_ll):
+    assert small_ll.merge_lists([1, 3, 5], [2, 4]) == 6

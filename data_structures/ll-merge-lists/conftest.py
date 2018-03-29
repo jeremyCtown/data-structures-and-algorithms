@@ -1,5 +1,5 @@
 import pytest
-from ll_kth import LinkedList as LL
+from ll_merge import LinkedList as LL
 
 
 @pytest.fixture

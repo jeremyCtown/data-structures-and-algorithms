@@ -101,3 +101,45 @@ class LinkedList:
                 current = current._next
         return answer
 
+    def merge_lists(self, ll_1, ll_2):
+        """
+        merges two lists
+        """
+        if ll_1 is None:
+            return ll_2
+        if ll_2 is None:
+            return ll_1
+
+        # answer = Node()
+        # head = answer
+        # while ll_1 or ll_2:
+        # current = self.head._next
+        # while current._next is not None:
+        #     if current._next.val == val:
+        #         new_node._next = current._next
+        #         current._next = new_node
+        #         self._size += 1
+        #         break
+
+        #     current = current._next
+
+
+    #       # Create a temporary first node
+    # head = result = Node()
+
+    # # Merge elements into a new list
+    # while curr_a or curr_b:
+    #     if curr_a and (not curr_b or curr_a.data <= curr_b.data):
+    #         result.next = Node(curr_a.data)
+    #         curr_a = curr_a.next
+    #     else:
+    #         result.next = Node(curr_b.data)
+    #         curr_b = curr_b.next
+
+    #     result = result.next
+
+    # return head.next
+
+
+
+
