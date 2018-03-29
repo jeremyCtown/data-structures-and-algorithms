@@ -7,6 +7,10 @@ def empty_ll():
     return LL()
 
 @pytest.fixture
+def single_ll():
+    return LL([0])
+
+@pytest.fixture
 def small_ll():
     return LL([5, 6, 8, 9])
 
