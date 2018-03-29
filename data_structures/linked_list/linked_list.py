@@ -40,7 +40,7 @@ class LinkedList:
 
     def find(self, val):
         """
-        Searches through a list for val and returns the node with that val
+        Searches through a list for val and returns the node with that val if it exists
         """
 
         current = self.head
