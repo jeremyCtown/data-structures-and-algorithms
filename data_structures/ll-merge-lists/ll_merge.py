@@ -122,6 +122,7 @@ def merge_lists(ll_1, ll_2):
     """
     baselist = 0
     zipped = 0
+    size = 0
 
     if (ll_1._size >= ll_2._size):
         baselist = ll_1
@@ -129,6 +130,9 @@ def merge_lists(ll_1, ll_2):
     else:
         baselist = ll_2
         zipped = ll_1
+
+    if zipped.head is None:
+        return baselist.head
 
     current = baselist.head
     temp = current._next
@@ -140,44 +144,8 @@ def merge_lists(ll_1, ll_2):
         temp = temp._next
         current = current._next
         zipped = zipped._next
-    return baselist
-
-
-    # if ll_1 is None:
-    #     return ll_2
-    # if ll_2 is None:
-    #     return ll_1
-
-    #     # answer = Node()
-    #     # head = answer
-    #     # while ll_1 or ll_2:
-    #     # current = self.head._next
-    #     # while current._next is not None:
-    #     #     if current._next.val == val:
-    #     #         new_node._next = current._next
-    #     #         current._next = new_node
-    #     #         self._size += 1
-    #     #         break
-
-    #     #     current = current._next
-
-
-    # #       # Create a temporary first node
-    # # head = result = Node()
-
-    # # # Merge elements into a new list
-    # # while curr_a or curr_b:
-    # #     if curr_a and (not curr_b or curr_a.data <= curr_b.data):
-    # #         result.next = Node(curr_a.data)
-    # #         curr_a = curr_a.next
-    # #     else:
-    # #         result.next = Node(curr_b.data)
-    # #         curr_b = curr_b.next
-
-    # #     result = result.next
-
-    # # return head.next
-
+        size += 1
+    return baselist.head
 
 
 

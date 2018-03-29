@@ -53,7 +53,22 @@ def test_kth_from_end(long_ll):
     assert long_ll.kth_from_end(3).val == 8
 
 
-def test_ll_merge(small_ll, long_ll):
-    # assert LL.merge_lists(small_ll, long_ll).head == 1
-    assert LL.merge_lists(small_ll, long_ll).head.val == 1
-    assert LL.merge_lists(small_ll, long_ll)._next.val == 5
+def test_ll_merge_long(small_ll, long_ll):
+    head = LL.merge_lists(small_ll, long_ll)
+    assert head.val == 1
+    assert head._next.val == 5
+    assert head._next._next.val == 2
+
+
+def test_ll_merge_short(small_ll, single_ll):
+    head = LL.merge_lists(small_ll, single_ll)
+    assert head.val == 5
+    assert head._next.val == 0
+    assert head._next._next.val == 6
+
+
+def test_ll_merge_empty(small_ll, empty_ll):
+    head = LL.merge_lists(small_ll, empty_ll)
+    assert head.val == 5
+    assert head._next.val == 6
+    assert head._next._next.val == 8
