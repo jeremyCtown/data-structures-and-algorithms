@@ -1,10 +1,10 @@
-# Linked List Kth-From-End
+# Linked List Merge Lists
 
-What if you just want to fit in? That's why we have Kth-From-End!
+Holy crap I'm tired... wish I could merge some more time in to my day
 
 ## Challenge
-Write a method for the Linked List class called kthFromEnd which takes a number, k, as an argument. Return the node that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+Write a function called mergeLists which takes two linked lists as arguments. Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the single list. Try and keep additional space down to O(1). You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
 
 ## Solution
 
-![](../../assets/07-ll-kth-from-end.jpg)
+![](../../assets/08-ll-merge-lists.jpg)
