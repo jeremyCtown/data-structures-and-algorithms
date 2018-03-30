@@ -78,13 +78,17 @@ def test_find_loop_empty(empty_ll):
     assert empty_ll.has_loop() is False
 
 
-def test_find_loop_long(long_ll):
+def test_find_loop_is_false(long_ll):
     test = long_ll.has_loop()
     assert test is False
 
 
-def test_loop_is_true(small_ll):
-    small_ll.head.next.next.next.next = small_ll.head
-    assert small_ll.has_loop is True
+def test_loop_is_true(empty_ll):
+    empty_ll.insert(4)
+    empty_ll.insert(5)
+    empty_ll.insert(6)
+    empty_ll.insert(7)
+    empty_ll.head._next._next._next._next = empty_ll.head
+    assert empty_ll.has_loop() is True
 
 

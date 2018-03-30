@@ -119,7 +119,6 @@ class LinkedList:
         """
         checks if LL has a loop
         """
-
         current = self.head
         fast = self.head
 
@@ -133,9 +132,6 @@ class LinkedList:
                 return False
             if fast is slow:
                 return True
-            # else:
-            #     fast = current._next._next
-            #     print('next')
         else:
             return False
 
