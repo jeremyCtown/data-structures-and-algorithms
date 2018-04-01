@@ -7,7 +7,6 @@ def test_create_new_list():
     assert LP.create_new_list(test_list) == [1, 2, 2, 3, 3, 4, 4, 5]
 
 
-
 def test_multiply_inner_lists(test_lp):
     test_lp.multiply_inner_lists()
     assert test_lp.counter == 4

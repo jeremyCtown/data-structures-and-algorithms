@@ -14,8 +14,7 @@ def create_new_list(test_list):
             print(i)
             new_list[counter] = i
             print(new_list)
-            counter += 1
-    return new_list
+            counter = counter + 1
     # largest_product()
     print(new_list)
     return new_list
