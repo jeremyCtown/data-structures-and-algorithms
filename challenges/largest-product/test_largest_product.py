@@ -1,16 +1,11 @@
 import pytest
 from largest_product import LargestProduct as LP
 
-@pytest.fixture
-def test_lp():
+
+def test_create_new_list():
     test_list = [[1, 2], [2, 3], [3, 4], [4, 5]]
-    return LP(test_list)
+    assert LP.create_new_list(test_list) == [1, 2, 2, 3, 3, 4, 4, 5]
 
-
-def test_input_is_valid(test_lp):
-    assert test_lp.test_list == [[1, 2], [2, 3], [3, 4], [4, 5]]
-    assert test_lp.counter == 0
-    assert test_lp.answer == 0
 
 
 def test_multiply_inner_lists(test_lp):
