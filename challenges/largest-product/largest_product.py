@@ -2,14 +2,17 @@
 # Inputs
 test_list = [[1, 2], [2, 3], [3, 4], [4, 5]]
 
+new_list = test_list
+
 
 def create_new_list(test_list):
     """
     creates a new list from 2D array
     """
     counter = 0
-    new_list = test_list
+
     for items in test_list:
+        print(test_list)
         for i in items:
             print(i)
             new_list[counter] = i
@@ -17,7 +20,7 @@ def create_new_list(test_list):
             counter = counter + 1
     # largest_product()
     print(new_list)
-    return new_list
+
 
 # a = [[1, 2, 3, 4], [5, 6], [7, 8, 9]]
 # for row in a:
