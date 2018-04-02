@@ -17,6 +17,12 @@ def test_insertion_of_value(empty_queue):
     assert empty_queue.back.val == 1
 
 
+def test_insertion_of_iterable(iter_queue):
+    assert iter_queue.back.val == 9
+    assert iter_queue.front.val == 7
+    assert iter_queue._size == 3
+
+
 def test_insertion_current_back(small_queue):
     assert small_queue._size == 5
     assert small_queue.back.val == 8

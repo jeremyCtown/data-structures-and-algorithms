@@ -7,6 +7,9 @@ class Queue:
         self.back = None
         self._size = 0
 
+        for item in iterable:
+            self.enqueue(item)
+
     def enqueue(self, val):
         """
         creates new node and pushes to queue
