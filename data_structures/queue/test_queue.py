@@ -18,11 +18,13 @@ def test_insertion_of_value(empty_queue):
 
 
 def test_insertion_current_back(small_queue):
+    assert small_queue._size == 5
     assert small_queue.back.val == 8
     assert small_queue.front.val == 4
 
 
 def test_insertion_large_list(large_queue):
+    assert large_queue._size == 1000
     assert large_queue.front.val == 0
     assert large_queue.back.val == 999
 
@@ -33,13 +35,17 @@ def test_dequeue_functionality(empty_queue):
 
 
 def test_dequeue_small_input(small_queue):
+    assert small_queue._size == 5
     assert small_queue.dequeue().val == 4
     assert small_queue.front.val == 5
+    assert small_queue._size == 4
 
 
 def test_dequeue_large_input(large_queue):
+    assert large_queue._size == 1000
     assert large_queue.dequeue().val == 0
     assert large_queue.front.val == 1
+    assert large_queue._size == 999
 
 
 def test_dequeue_edge_empty_list(empty_queue):

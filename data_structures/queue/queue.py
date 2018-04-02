@@ -36,8 +36,10 @@ class Queue:
         elif self.front is self.back:
             self.front = None
             self.back = self.front
+            self._size -= 1
         else:
             self.front = self.front._next
+            self._size -= 1
 
         return head
 
