@@ -11,5 +11,5 @@ def small_ll():
     return LL([5, 6, 8, 9])
 
 @pytest.fixture
-def predefined_ll():
+def long_ll():
     return LL([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
