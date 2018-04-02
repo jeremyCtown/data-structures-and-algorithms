@@ -4,8 +4,8 @@ from node import Node
 class Stack:
     def __init__(self, iterable=[]):
         self.top = None
-        self._current = 0
-        # self._size = 0 (optional)
+        self._current = self.top
+        self._size = 0
 
     # We would also define our magics for more info
 
@@ -25,37 +25,47 @@ class Stack:
         # better implementation of raising an error
         try:
             self.top = Node(val, self.top)
-            self._current += 1
+            self._size += 1
         except TypeError:
             # handle the thing
             pass
 
         return self.top
 
-    def push_2(self, val):
-        """
-        This is a refactored version of push above
-        """
-        try:
-            node = Node(val)
-        except TypeError:
-            pass
+    # def push_2(self, val):
+    #     """
+    #     This is a refactored version of push above
+    #     """
+    #     try:
+    #         node = Node(val)
+    #     except TypeError:
+    #         pass
 
-        node._next = self.top
-        self.top = node
+    #     node._next = self.top
+    #     self.top = node
 
-        self._current += 1
+    #     self._size += 1
 
-        return self.top
+    #     return self.top
 
     def pop(self):
-        try:
+        """
+        This pops the top node and assigns the head to the next node
+        """
+
+        if self.top is None:
+            return None
+        else:
             top = self.top
             self.top = self.top._next
-            self._current -= 1
+            self._size -= 1
             return top
-        except AttributeError:
-            return None
 
     def peek(self):
-        pass
+        """
+        Allows the user to see the value of the top node in the stack
+        """
+        if self.top is None:
+            return None
+        else:
+            return self.top
