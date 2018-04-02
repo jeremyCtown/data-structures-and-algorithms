@@ -24,6 +24,7 @@ def test_dequeue_functionality(small_queue):
     small_queue.dequeue()
     assert small_queue._size == 4
 
+
 def test_interoperability(small_queue):
     """
     test can switch back and forth
@@ -35,23 +36,6 @@ def test_interoperability(small_queue):
     small_queue.enqueue(8)
     small_queue.enqueue(9)
     assert small_queue._size == 5
-
-
-
-
-
-# def test_dequeue_small_input(small_queue):
-#     assert small_queue._size == 5
-#     assert small_queue.dequeue().val == 4
-#     assert small_queue.front.val == 5
-#     assert small_queue._size == 4
-
-
-# def test_dequeue_large_input(large_queue):
-#     assert large_queue._size == 1000
-#     assert large_queue.dequeue().val == 0
-#     assert large_queue.front.val == 1
-#     assert large_queue._size == 999
 
 
 def test_dequeue_edge_empty_list(empty_queue):
