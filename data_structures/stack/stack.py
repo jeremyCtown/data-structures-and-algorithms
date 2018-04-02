@@ -4,6 +4,7 @@ from node import Node
 class Stack:
     def __init__(self, iterable=[]):
         self.top = None
+        self._current = 0
         # self._size = 0 (optional)
 
     # We would also define our magics for more info
@@ -24,6 +25,7 @@ class Stack:
         # better implementation of raising an error
         try:
             self.top = Node(val, self.top)
+            self._current += 1
         except TypeError:
             # handle the thing
             pass
@@ -42,10 +44,15 @@ class Stack:
         node._next = self.top
         self.top = node
 
+        self._current += 1
+
         return self.top
 
     def pop(self):
-        return self.top.pop()
+        top = self.top
+        self.top = self.top._next
+        self._current -= 1
+        return top
 
     def peek(self):
         pass
