@@ -56,3 +56,26 @@ def test_dequeue_large_input(large_queue):
 
 def test_dequeue_edge_empty_list(empty_queue):
     assert empty_queue.dequeue() is None
+
+
+def test_everything(iter_queue):
+    iter_queue.enqueue(10)
+    assert iter_queue._size == 4
+    assert iter_queue.front.val == 7
+    assert iter_queue.back.val == 10
+    iter_queue.dequeue()
+    assert iter_queue.front.val == 8
+    assert iter_queue.back.val == 10
+    assert iter_queue._size == 3
+    iter_queue.dequeue()
+    assert iter_queue.front.val == 9
+    assert iter_queue.back.val == 10
+    assert iter_queue._size == 2
+    iter_queue.dequeue()
+    assert iter_queue.front.val == 10
+    assert iter_queue.back.val == 10
+    assert iter_queue._size == 1
+    iter_queue.dequeue()
+    assert iter_queue.front is None
+    assert iter_queue.back is None
+    assert iter_queue._size == 0

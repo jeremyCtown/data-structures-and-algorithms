@@ -15,15 +15,11 @@ class Queue:
         creates new node and pushes to queue
         """
 
-        node = Node(val)
-
         if self.front is None:
-            self.front = node
-            self.back = self.front
+            self.front = self.back = Node(val)
             self._size += 1
         else:
-            self.back._next = node
-            self.back = node
+            self.back._next = self.back = Node(val)
             self._size += 1
         return self.back
 
