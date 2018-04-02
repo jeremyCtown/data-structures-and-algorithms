@@ -49,10 +49,13 @@ class Stack:
         return self.top
 
     def pop(self):
-        top = self.top
-        self.top = self.top._next
-        self._current -= 1
-        return top
+        try:
+            top = self.top
+            self.top = self.top._next
+            self._current -= 1
+            return top
+        except AttributeError:
+            return None
 
     def peek(self):
         pass

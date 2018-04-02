@@ -24,3 +24,11 @@ def test_non_int_val(empty_stack):
 def test_pop_function(empty_stack):
     assert empty_stack.push(1).val == 1
     assert empty_stack.pop().val == 1
+
+
+def test_pop_for_real(large_stack):
+    assert large_stack.pop().val == 999
+
+
+def test_pop_edge_empty_list(empty_stack):
+    assert empty_stack.pop() is None
