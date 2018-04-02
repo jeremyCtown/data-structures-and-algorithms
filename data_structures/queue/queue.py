@@ -43,13 +43,3 @@ class Queue:
 
         return head
 
-
-
-        if self.front is None:
-            return None
-        else:
-            front = self.front
-            self.front = self.front._next
-            self._size -= 1
-            return front
-
