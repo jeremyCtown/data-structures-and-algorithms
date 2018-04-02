@@ -6,19 +6,22 @@ def test_empty_stack_has_no_top(empty_stack):
     assert empty_stack.top is None
 
 
+def test_current_size(small_stack):
+    assert small_stack._size == 5
+
+
 def test_insertion_of_value(empty_stack):
     assert empty_stack.top is None
     assert empty_stack.push(1).val == 1
+    assert empty_stack.top.val == 1
 
 
-def test_empty_val_on_insert(empty_stack):
-    with pytest.raises(TypeError):
-        empty_stack.push()
+def test_insertion_current_top(small_stack):
+    assert small_stack.top.val == 8
 
 
-def test_non_int_val(empty_stack):
-    with pytest.raises(TypeError):
-        empty_stack.push('not a number')
+def test_insertion_large_list(large_stack):
+    assert large_stack.top.val == 999
 
 
 def test_pop_functionality(empty_stack):
