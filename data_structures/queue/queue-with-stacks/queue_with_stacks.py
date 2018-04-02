@@ -19,7 +19,6 @@ class Queue:
 
         self.in_stack.push(node)
         self._size += 1
-        return node
 
     def dequeue(self):
         """
