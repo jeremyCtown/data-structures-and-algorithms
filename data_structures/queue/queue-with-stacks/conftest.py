@@ -1,5 +1,5 @@
 import pytest
-from queue import Queue
+from queue_with_stacks import Queue
 
 @pytest.fixture
 def empty_queue():
@@ -24,7 +24,4 @@ def large_queue():
 
     return s
 
-@pytest.fixture
-def iter_queue():
-    return Queue([7, 8, 9])
 
