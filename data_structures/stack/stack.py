@@ -22,12 +22,12 @@ class Stack:
             raise TypeError('Your argument is invalid')
 
         # better implementation of raising an error
-        try: 
+        try:
             self.top = Node(val, self.top)
         except TypeError:
             # handle the thing
             pass
-        
+
         return self.top
 
     def push_2(self, val):
@@ -45,7 +45,7 @@ class Stack:
         return self.top
 
     def pop(self):
-        pass
+        return self.top.pop()
 
     def peek(self):
         pass

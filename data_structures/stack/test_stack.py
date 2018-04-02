@@ -19,3 +19,8 @@ def test_empty_val_on_insert(empty_stack):
 def test_non_int_val(empty_stack):
     with pytest.raises(TypeError):
         empty_stack.push('not a number')
+
+
+def test_pop_function(empty_stack):
+    assert empty_stack.push(1).val == 1
+    assert empty_stack.pop().val == 1
