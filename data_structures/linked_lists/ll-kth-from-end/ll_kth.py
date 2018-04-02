@@ -3,7 +3,7 @@ from node import Node
 
 class LinkedList:
     """
-    Doc strings are gud
+    initializes LL
     """
     def __init__(self, iter=[]):
         self.head = None
@@ -92,6 +92,10 @@ class LinkedList:
         counter = 0
         answer = 0
         kth = self._size - k
+
+        if self.head is None:
+            return None
+
         while current._next is not None:
             if counter == kth:
                 answer = current
