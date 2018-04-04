@@ -44,12 +44,12 @@ class LinkedList:
 
         else:
             current = self.head
-        while current:
-            if current._next is None:
-                current._next = Node(val)
-                self._size += 1
-                return current
-            current = current._next
+            while current:
+                if current._next is None:
+                    current._next = Node(val)
+                    self._size += 1
+                    return current._next
+                current = current._next
 
     def insert_before(self, val, new_val):
         """
@@ -66,7 +66,7 @@ class LinkedList:
                     new_node = Node(new_val)
                     new_node._next = current
                     previous._next = new_node
-                    self.size += 1
+                    self._size += 1
                     return new_node
             previous = current
             current = current._next
@@ -85,9 +85,9 @@ class LinkedList:
                 placeholder = current._next
                 current._next = Node(new_val)
                 current._next._next = placeholder
-                self.size += 1
+                self._size += 1
                 return current._next
 
-        current = current._next
+            current = current._next
 
 

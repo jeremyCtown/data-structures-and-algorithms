@@ -14,8 +14,9 @@ def test_insert_additional_node(small_ll):
 
 def test_append_adds_to_empty(empty_ll):
     assert empty_ll._size == 0
-    assert empty_ll.append(2).val == 2
+    empty_ll.append(2)
     assert empty_ll._size == 1
+    assert empty_ll.head.val == 2
 
 
 def test_append_adds_to_end(small_ll):
