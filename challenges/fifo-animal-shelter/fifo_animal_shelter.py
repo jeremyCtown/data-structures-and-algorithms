@@ -1,36 +1,52 @@
 from node import Node
-from stack import Stack
 
 
-class Queue:
-    def __init__(self):
+class AnimalShelter:
+    def __init__(self, val):
+        self.front = None
+        self.back = None
         self._size = 0
-        self.in_stack = Stack()
-        self.out_stack = Stack()
 
     def enqueue(self, val):
         """
         creates new node and pushes to queue
         """
-        node = Node(val)
 
-        while len(self.out_stack) != 0:
-            self.in_stack.push(self.out_stack.pop())
+        if val != 'dog' or val != 'cat':
+            return 'Sorry, cats and dogs only'
 
-        self.in_stack.push(node)
-        self._size += 1
+        if self.front is None:
+            self.front = self.back = Node(val)
+            self._size += 1
+        else:
+            self.back._next = self.back = Node(val)
+            self._size += 1
+        return self.back
 
-    def dequeue(self):
+    def dequeue(self, pref):
         """
-        returns front node
+        This pops the next animal with value of 'pref'
         """
 
-        while len(self.in_stack) != 0:
-            var = self.in_stack.pop()
-            self.out_stack.push(var)
+        prev = self.front
+        current = self.front._next
 
-        self.out_stack.pop()
-        self._size -= 1
+        if pref
+
+        for i in self._size:
+            if self.front.val == pref or pref is None:
+                new_pet = self.front
+                self.front = self.front._next
+                self._size -= 1
+                return new_pet
+            elif current == pref:
+                prev._next = current._next
+                self._size -= 1
+                return current
+            else:
+                prev = current
+                current = current._next
+
 
 
 

@@ -1,41 +1,57 @@
 import pytest
-from queue_with_stacks import Queue
-
-@pytest.fixture
-def empty_queue():
-    return Queue()
+from fifo_animal_shelter import AnimalShelter
 
 
-def test_enqueue_functionality(empty_queue):
-    """
-    makes sure node is passing through enqueue
-    """
-    assert empty_queue._size == 0
-    empty_queue.enqueue(1)
-    empty_queue.enqueue(2)
-    assert empty_queue._size == 2
+def test_empty_queue_has_no_back(empty_queue):
+    assert empty_queue.back is None
+    assert empty_queue.front is None
 
 
-def test_dequeue_functionality(small_queue):
-    """
-    test dequeue adds/subtracts from size
-    """
+def test_current_size(small_queue):
     assert small_queue._size == 5
-    small_queue.dequeue()
+
+
+def test_insertion_of_value(empty_queue):
+    assert empty_queue.back is None
+    assert empty_queue.enqueue(1).val == 1
+    assert empty_queue.back.val == 1
+
+
+def test_insertion_of_iterable(iter_queue):
+    assert iter_queue.back.val == 9
+    assert iter_queue.front.val == 7
+    assert iter_queue._size == 3
+
+
+def test_insertion_current_back(small_queue):
+    assert small_queue._size == 5
+    assert small_queue.back.val == 8
+    assert small_queue.front.val == 4
+
+
+def test_insertion_large_list(large_queue):
+    assert large_queue._size == 1000
+    assert large_queue.front.val == 0
+    assert large_queue.back.val == 999
+
+
+def test_dequeue_functionality(empty_queue):
+    assert empty_queue.enqueue(8).val == 8
+    assert empty_queue.dequeue().val == 8
+
+
+def test_dequeue_small_input(small_queue):
+    assert small_queue._size == 5
+    assert small_queue.dequeue().val == 4
+    assert small_queue.front.val == 5
     assert small_queue._size == 4
 
 
-def test_interoperability(small_queue):
-    """
-    test can switch back and forth
-    """
-    assert small_queue._size == 5
-    small_queue.dequeue()
-    small_queue.dequeue()
-    assert small_queue._size == 3
-    small_queue.enqueue(8)
-    small_queue.enqueue(9)
-    assert small_queue._size == 5
+def test_dequeue_large_input(large_queue):
+    assert large_queue._size == 1000
+    assert large_queue.dequeue().val == 0
+    assert large_queue.front.val == 1
+    assert large_queue._size == 999
 
 
 def test_dequeue_edge_empty_list(empty_queue):
