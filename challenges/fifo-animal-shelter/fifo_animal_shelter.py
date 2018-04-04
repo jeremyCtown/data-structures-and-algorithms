@@ -2,7 +2,7 @@ from node import Node
 
 
 class AnimalShelter:
-    def __init__(self, val):
+    def __init__(self):
         self.front = None
         self.back = None
         self._size = 0
@@ -12,8 +12,8 @@ class AnimalShelter:
         creates new node and pushes to queue
         """
 
-        if val != 'dog' or val != 'cat':
-            return 'Sorry, cats and dogs only'
+        # if val != 'dog' or val != 'cat':
+        #     return 'Sorry, cats and dogs only'
 
         if self.front is None:
             self.front = self.back = Node(val)
@@ -31,22 +31,18 @@ class AnimalShelter:
         prev = self.front
         current = self.front._next
 
-        if pref
-
-        for i in self._size:
+        while current:
             if self.front.val == pref or pref is None:
-                new_pet = self.front
                 self.front = self.front._next
                 self._size -= 1
-                return new_pet
-            elif current == pref:
+                return pref
+            elif current.val == pref:
                 prev._next = current._next
                 self._size -= 1
-                return current
+                return pref
             else:
                 prev = current
                 current = current._next
-
 
 
 
