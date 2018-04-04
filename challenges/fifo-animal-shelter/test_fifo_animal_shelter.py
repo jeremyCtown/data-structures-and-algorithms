@@ -21,11 +21,11 @@ def test_insertion_current_back(small_queue):
 
 
 def test_dequeue_functionality(empty_queue):
-    assert empty_queue.enqueue('dog') == 'dog'
-    assert empty_queue.dequeue('dog').val == 'dog'
+    empty_queue.enqueue('dog')
+    assert empty_queue.dequeue('dog') == 'dog'
     assert empty_queue._size == 0
 
-def test_dequeue_small_list(small_list):
+def test_dequeue_small_list(small_queue):
     assert small_queue.dequeue('dog') == 'dog'
     assert small_queue._size == 4
 
