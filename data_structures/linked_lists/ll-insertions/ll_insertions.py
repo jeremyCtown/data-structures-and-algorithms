@@ -33,74 +33,61 @@ class LinkedList:
         """
         self.head = Node(val, self.head)
         self._size += 1
+        return self.head
 
     def append(self, val):
         """
         appends node to the end of the LL
         """
-
         if self.head is None:
-            self.head = Node(val)
-            self._size += 1
-            return self.head
+            self.insert(val)
 
-        current = self.head
-
+        else:
+            current = self.head
         while current:
-            current = current._next
-            if current is None:
-                current = Node(val)
+            if current._next is None:
+                current._next = Node(val)
                 self._size += 1
                 return current
+            current = current._next
 
     def insert_before(self, val, new_val):
         """
         inserts node before node at val
         """
-        new_node = Node(new_val)
-        current = self.head._next
-
-        if self._size == 1:
-            self.insert(new_val)
-            return new_node
-
-        while current._next:
-            if current._next.val == val:
-                new_node._next = current._next
-                current._next = new_node
-                self._size += 1
-                break
-
+        current = self.head
+        previous = None
+        while current:
+            if current.val == val:
+                if previous is None:
+                    self.insert(new_val)
+                    break
+                else:
+                    new_node = Node(new_val)
+                    new_node._next = current
+                    previous._next = new_node
+                    self.size += 1
+                    return new_node
+            previous = current
             current = current._next
 
-        if current._next is None:
-            raise ValueError("Data not in list")
-
-        return new_node
+            if current is None:
+                    raise ValueError("Data not in list")
 
     def insert_after(self, val, new_val):
         """
         inserts node after node at val
         """
-        new_node = Node(new_val)
-        current = self.head._next
 
-        if self._size == 1:
-            self.append(new_val)
-            return new_node
-
-        while current._next is not None:
+        current = self.head
+        while current:
             if current.val == val:
-                new_node._next = current._next._next
-                current._next = new_node
-                self._size += 1
-                break
+                placeholder = current._next
+                current._next = Node(new_val)
+                current._next._next = placeholder
+                self.size += 1
+                return current._next
 
-            current = current._next
-
-        if current._next is None:
-            raise ValueError("Data not in list")
-
-        return new_node
+        current = current._next
 
 
