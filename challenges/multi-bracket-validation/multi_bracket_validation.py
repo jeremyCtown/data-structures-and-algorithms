@@ -15,15 +15,24 @@ def multi_bracket_validation(stuff):
         if i in openers:
             checker.push(i)
         if i == ']':
-            if checker.top.val != '[':
+            if checker.top.val == '[':
+                checker.pop()
+                continue
+            else:
                 answer = False
                 break
         if i == '}':
-            if checker.top.val != '{':
+            if checker.top.val == '{':
+                checker.pop()
+                continue
+            else:
                 answer = False
                 break
         if i == ')':
-            if checker.top.val != '(':
+            if checker.top.val == '(':
+                checker.pop()
+                continue
+            else:
                 answer = False
                 break
 
