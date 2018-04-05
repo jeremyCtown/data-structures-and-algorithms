@@ -55,7 +55,8 @@ def test_dequeue_large_input(large_queue):
 
 
 def test_dequeue_edge_empty_list(empty_queue):
-    assert empty_queue.dequeue() is None
+    with pytest.raises(IndexError):
+        empty_queue.dequeue()
 
 
 def test_everything(iter_queue):

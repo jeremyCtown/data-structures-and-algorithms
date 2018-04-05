@@ -32,5 +32,6 @@ broke_AF = '(){some_text[more_text}()]'
 def test_for_crazy_stuff():
     assert mb(crazy_stuff) is True
 
+
 def test_for_broke_AF():
     assert mb(broke_AF) is False

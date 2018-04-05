@@ -10,6 +10,12 @@ class Queue:
         for item in iterable:
             self.enqueue(item)
 
+    def __repr__(self):
+        return '<front> => {}'.format(self.front.val)
+
+    def __len__(self):
+        return self._size
+
     def enqueue(self, val):
         """
         creates new node and pushes to queue
@@ -30,8 +36,8 @@ class Queue:
 
         head = self.front
 
-        if self.front is None:
-            return None
+        if not self.front:
+            raise IndexError('No front')
         elif self.front is self.back:
             self.front = None
             self.back = self.front
