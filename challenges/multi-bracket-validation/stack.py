@@ -22,7 +22,7 @@ class Stack:
         if self.top is None:
             return None
         else:
-            top = self.top
+            top = self.top.val
             self.top = self.top._next
             self._size -= 1
             return top
