@@ -30,8 +30,8 @@ class Queue:
 
         head = self.front
 
-        if self.front is None:
-            return None
+        if not self.front:
+            raise IndexError('No front')
         elif self.front is self.back:
             self.front = None
             self.back = self.front
