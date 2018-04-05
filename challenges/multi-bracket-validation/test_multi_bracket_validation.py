@@ -1,8 +1,8 @@
 import pytest
 from multi_bracket_validation import multi_bracket_validation as mb
 
-stuff = '[]'
-broken_stuff = '{]'
+stuff = '()'
+broken_stuff = '[)'
 
 
 def test_for_stuff():
