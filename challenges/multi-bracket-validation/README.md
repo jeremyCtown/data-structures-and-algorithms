@@ -16,4 +16,4 @@ Curly Brackets : {}
 
 ## Solution
 
-![](../../assets/13-multi-bracket-validation.jpg)
+![](../../assets/13-multi-thing.jpg
