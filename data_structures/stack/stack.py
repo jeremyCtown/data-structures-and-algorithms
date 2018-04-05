@@ -6,6 +6,12 @@ class Stack:
         self.top = None
         self._size = 0
 
+    def __repr__(self):
+        return '<top> => {}'.format(self.top.val)
+
+    def __len__(self):
+        return self._size
+
     def push(self, val):
         """
         creates new node and pushes to stack

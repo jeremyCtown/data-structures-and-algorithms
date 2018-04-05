@@ -10,6 +10,12 @@ class Queue:
         for item in iterable:
             self.enqueue(item)
 
+    def __repr__(self):
+        return '<front> => {}'.format(self.front.val)
+
+    def __len__(self):
+        return self._size
+
     def enqueue(self, val):
         """
         creates new node and pushes to queue
