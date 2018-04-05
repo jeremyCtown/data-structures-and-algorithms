@@ -26,24 +26,26 @@ def test_insertion_large_list(large_stack):
 
 def test_pop_functionality(empty_stack):
     assert empty_stack.push(8).val == 8
-    assert empty_stack.pop().val == 8
+    assert empty_stack.pop() == 8
 
 
 def test_pop_for_real(large_stack):
-    assert large_stack.pop().val == 999
+    assert large_stack.pop() == 999
 
 
 def test_pop_edge_empty_list(empty_stack):
-    assert empty_stack.pop() is None
+    with pytest.raises(IndexError):
+        empty_stack.pop()
 
 
 def test_peek_user_gen_list(small_stack):
-    assert small_stack.peek().val == 8
+    assert small_stack.peek() == 8
 
 
 def test_peek_for_real(large_stack):
-    assert large_stack.peek().val == 999
+    assert large_stack.peek() == 999
 
 
 def test_peek_edge_empty_list(empty_stack):
-    assert empty_stack.peek() is None
+    with pytest.raises(IndexError):
+        empty_stack.peek()

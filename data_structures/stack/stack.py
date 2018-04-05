@@ -19,19 +19,19 @@ class Stack:
         This pops the top node and assigns the head to the next node
         """
 
-        if self.top is None:
-            return None
+        if not self.top:
+            raise IndexError('No top')
         else:
             top = self.top
             self.top = self.top._next
             self._size -= 1
-            return top
+            return top.val
 
     def peek(self):
         """
         Allows the user to see the value of the top node in the stack
         """
-        if self.top is None:
-            return None
+        if not self.top:
+            raise IndexError('No top')
         else:
-            return self.top
+            return self.top.val
