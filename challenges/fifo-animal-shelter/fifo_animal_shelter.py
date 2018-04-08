@@ -32,12 +32,6 @@ class AnimalShelter:
         current = self.front
 
         while current is not None and self._size != 0:
-            # import pdb; pdb.set_trace()
-            # if current.val == pref.val:
-            #     pet = prev.val
-            #     self.front = self.front._next
-            #     self._size -= 1
-            #     return pet
             if current.val.val == pref.val:
                 pet = current.val
                 prev._next = current._next
