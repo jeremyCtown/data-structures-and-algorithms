@@ -21,7 +21,7 @@ def test_dequeue_functionality(small_queue):
     test dequeue adds/subtracts from size
     """
     assert small_queue._size == 5
-    small_queue.dequeue()
+    assert small_queue.dequeue().val == 4
     assert small_queue._size == 4
 
 
@@ -30,11 +30,11 @@ def test_interoperability(small_queue):
     test can switch back and forth
     """
     assert small_queue._size == 5
-    small_queue.dequeue()
-    small_queue.dequeue()
-    assert small_queue._size == 3
     small_queue.enqueue(8)
     small_queue.enqueue(9)
+    assert small_queue._size == 7
+    assert small_queue.dequeue().val == 4
+    assert small_queue.dequeue().val == 5
     assert small_queue._size == 5
 
 

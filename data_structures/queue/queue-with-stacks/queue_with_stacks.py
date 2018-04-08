@@ -29,8 +29,8 @@ class Queue:
             var = self.in_stack.pop()
             self.out_stack.push(var)
 
-        self.out_stack.pop()
         self._size -= 1
+        return self.out_stack.pop()
 
 
 
