@@ -7,16 +7,16 @@ class AnimalShelter:
         self.back = None
         self._size = 0
 
+    def __repr__(self):
+        return 'Next available pet is {self.front.val}'
+
     def enqueue(self, val):
         """
         creates new node and pushes to queue
         """
 
-        # if val != 'dog' or val != 'cat':
-        #     return 'Sorry, cats and dogs only'
-
         if self.front is None:
-            self.front = self.back = Node(val)
+            self.back = self.front = Node(val)
             self._size += 1
         else:
             self.back._next = self.back = Node(val)
@@ -28,21 +28,19 @@ class AnimalShelter:
         This pops the next animal with value of 'pref'
         """
 
-        prev = self.front
-        current = self.front._next
+        prev = self.back
+        current = self.front
 
-        while current:
-            if self.front.val == pref or pref is None:
-                self.front = self.front._next
-                self._size -= 1
-                return pref
-            elif current.val == pref:
+        while current is not None and self._size != 0:
+            if current.val.val == pref.val:
+                pet = current.val
                 prev._next = current._next
                 self._size -= 1
-                return pref
+                return pet
             else:
                 prev = current
                 current = current._next
 
-
+        else:
+            raise Exception(('We are all out of {}s').format(pref.val))
 

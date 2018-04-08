@@ -1,38 +1,24 @@
 import pytest
 from fifo_animal_shelter import AnimalShelter
+from pets import Dog, Cat
 
 @pytest.fixture
 def empty_queue():
+    """
+    Creates empty queue
+    """
     return AnimalShelter()
 
 @pytest.fixture
 def small_queue():
+    """
+    Populates queue with nodes
+    """
     s= AnimalShelter()
-    s.enqueue('cat')
-    s.enqueue('dog')
-    s.enqueue('dog')
-    s.enqueue('cat')
-    s.enqueue('dog')
-    return s
-
-
-@pytest.fixture
-def dog_queue():
-    s= AnimalShelter()
-    s.enqueue('dog')
-    s.enqueue('dog')
-    s.enqueue('dog')
-    s.enqueue('dog')
-    s.enqueue('dog')
-    return s
-
-@pytest.fixture
-def cat_queue():
-    s= AnimalShelter()
-    s.enqueue('cat')
-    s.enqueue('cat')
-    s.enqueue('cat')
-    s.enqueue('cat')
-    s.enqueue('cat')
+    s.enqueue(Cat())
+    s.enqueue(Dog())
+    s.enqueue(Dog())
+    s.enqueue(Cat())
+    s.enqueue(Cat())
     return s
 
