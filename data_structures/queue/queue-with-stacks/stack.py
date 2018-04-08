@@ -31,7 +31,7 @@ class Stack:
             top = self.top
             self.top = self.top._next
             self._size -= 1
-            return top
+            return top.val
 
     def peek(self):
         """
