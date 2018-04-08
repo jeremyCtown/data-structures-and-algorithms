@@ -1,5 +1,5 @@
 import pytest
-from fifo_animal_shelter import AnimalShelter
+from fifo_animal_shelter import AnimalShelter, Dog, Cat
 
 @pytest.fixture
 def empty_queue():
@@ -8,31 +8,31 @@ def empty_queue():
 @pytest.fixture
 def small_queue():
     s= AnimalShelter()
-    s.enqueue('cat')
-    s.enqueue('dog')
-    s.enqueue('dog')
-    s.enqueue('cat')
-    s.enqueue('dog')
+    s.enqueue(Cat())
+    s.enqueue(Dog())
+    s.enqueue(Dog())
+    s.enqueue(Cat())
+    s.enqueue(Cat())
     return s
 
 
 @pytest.fixture
 def dog_queue():
     s= AnimalShelter()
-    s.enqueue('dog')
-    s.enqueue('dog')
-    s.enqueue('dog')
-    s.enqueue('dog')
-    s.enqueue('dog')
+    s.enqueue(Dog())
+    s.enqueue(Dog())
+    s.enqueue(Dog())
+    s.enqueue(Dog())
+    s.enqueue(Dog())
     return s
 
 @pytest.fixture
 def cat_queue():
     s= AnimalShelter()
-    s.enqueue('cat')
-    s.enqueue('cat')
-    s.enqueue('cat')
-    s.enqueue('cat')
-    s.enqueue('cat')
+    s.enqueue(Cat())
+    s.enqueue(Cat())
+    s.enqueue(Cat())
+    s.enqueue(Cat())
+    s.enqueue(Cat())
     return s
 
