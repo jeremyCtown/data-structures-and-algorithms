@@ -1,4 +1,7 @@
 class Dog:
+    """
+    Creates dog object
+    """
     def __init__(self):
         self.val = 'dog'
 
@@ -7,6 +10,9 @@ class Dog:
 
 
 class Cat:
+    """
+    Creates cat object
+    """
     def __init__(self):
         self.val = 'cat'
 

@@ -4,10 +4,16 @@ from pets import Dog, Cat
 
 @pytest.fixture
 def empty_queue():
+    """
+    Creates empty queue
+    """
     return AnimalShelter()
 
 @pytest.fixture
 def small_queue():
+    """
+    Populates queue with nodes
+    """
     s= AnimalShelter()
     s.enqueue(Cat())
     s.enqueue(Dog())
@@ -15,25 +21,4 @@ def small_queue():
     s.enqueue(Cat())
     s.enqueue(Cat())
     return s
-
-
-# @pytest.fixture
-# def dog_queue():
-#     s= AnimalShelter()
-#     s.enqueue(Dog())
-#     s.enqueue(Dog())
-#     s.enqueue(Dog())
-#     s.enqueue(Dog())
-#     s.enqueue(Dog())
-#     return s
-
-# @pytest.fixture
-# def cat_queue():
-#     s= AnimalShelter()
-#     s.enqueue(Cat())
-#     s.enqueue(Cat())
-#     s.enqueue(Cat())
-#     s.enqueue(Cat())
-#     s.enqueue(Cat())
-#     return s
 
