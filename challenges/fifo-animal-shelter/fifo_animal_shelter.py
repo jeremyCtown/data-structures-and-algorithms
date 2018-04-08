@@ -7,6 +7,9 @@ class AnimalShelter:
         self.back = None
         self._size = 0
 
+    def __repr__(self):
+        return 'Next available pet is {self.front.val}'
+
     def enqueue(self, val):
         """
         creates new node and pushes to queue
@@ -25,22 +28,25 @@ class AnimalShelter:
         This pops the next animal with value of 'pref'
         """
 
-        prev = self.front
-        current = self.front._next
+        prev = self.back
+        current = self.front
 
-        while current:
+        while current is not None and self._size != 0:
             # import pdb; pdb.set_trace()
-            if prev.val == pref.val or pref.val is None:
-                self.front = self.front._next
-                self._size -= 1
-                return prev.val
-            elif current.val == pref.val:
+            # if current.val == pref.val:
+            #     pet = prev.val
+            #     self.front = self.front._next
+            #     self._size -= 1
+            #     return pet
+            if current.val.val == pref.val:
+                pet = current.val
                 prev._next = current._next
                 self._size -= 1
-                return current.val
+                return pet
             else:
                 prev = current
                 current = current._next
 
-
+        else:
+            raise Exception(('We are all out of {}s').format(pref.val))
 
