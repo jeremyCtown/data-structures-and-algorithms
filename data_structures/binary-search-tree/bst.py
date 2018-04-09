@@ -16,7 +16,6 @@ class BST:
         return self.root.val
 
     def insert(self, val):
-        # import pdb; pdb.set_trace()
         node = Node(val)
         current = self.root
 
@@ -44,23 +43,13 @@ class BST:
     def in_order(self, operation):
 
         def _walk(node=None):
+            if node is None:
+                return None
 
             if node is not None:
                 _walk(node.left)
                 operation(node)
                 _walk(node.right)
-
-            # if node is None:
-            #     operation(node)
-            #     return
-
-            # if node.left is not None:
-            #     _walk(node.left)
-
-            # operation(node)
-
-            # if node.right is not None:
-            #     _walk(node.right)
 
         _walk(self.root)
 

@@ -10,3 +10,8 @@ def test_bst():
 @pytest.fixture
 def iterable():
     return BST([8, 2, 5, 18, 13, 1, 23])
+
+
+@pytest.fixture
+def test_dict():
+    return BST([{'foo': 'bar'}])
