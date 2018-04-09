@@ -2,7 +2,7 @@ from node import Node
 
 
 class BST:
-    def __init__(self):
+    def __init__(self, iter=[]):
         self.root = None
 
     def __repr__(self):
@@ -10,21 +10,6 @@ class BST:
 
     def __str__(self):
         return self.root.val
-
-    def in_order(self, operation):
-        def _walk(node=None):
-            if node is None:
-                return
-
-            if node.left is not None:
-                _walk(node.left)
-
-            operation(node)
-
-            if node.right is not None:
-                _walk(node.right)
-
-        _walk(self.root)
 
     def insert(self, val):
         node = Node(val)
@@ -50,3 +35,44 @@ class BST:
                     break
 
         return node
+
+    def in_order(self, operation):
+        def _walk(node=None):
+
+            if node is not None:
+                _walk(node.left)
+                operation(node)
+                _walk(node.right)
+
+            # if node is None:
+            #     return
+
+            # if node.left is not None:
+            #     _walk(node.left)
+
+            # operation(node)
+
+            # if node.right is not None:
+            #     _walk(node.right)
+
+        _walk(self.root)
+
+    def pre_order(self, operation):
+        def _walk(node=None):
+
+            if node is not None:
+                operation(node)
+                _walk(node.left)
+                _walk(node.right)
+
+        _walk(self.root)
+
+    def post_order(self, operation):
+        def _walk(node=None):
+
+            if node is not None:
+                _walk(node.left)
+                _walk(node.right)
+                operation(node)
+
+        _walk(self.root)
