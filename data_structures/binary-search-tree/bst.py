@@ -4,6 +4,10 @@ from node import Node
 class BST:
     def __init__(self, iter=[]):
         self.root = None
+        self.iter = iter
+
+        for item in self.iter:
+            self.insert(item)
 
     def __repr__(self):
         return '<BST Root {}>'.format(self.root.val)
@@ -12,6 +16,7 @@ class BST:
         return self.root.val
 
     def insert(self, val):
+        # import pdb; pdb.set_trace()
         node = Node(val)
         current = self.root
 
