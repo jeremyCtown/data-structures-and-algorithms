@@ -42,6 +42,7 @@ class BST:
         return node
 
     def in_order(self, operation):
+
         def _walk(node=None):
 
             if node is not None:
@@ -50,6 +51,7 @@ class BST:
                 _walk(node.right)
 
             # if node is None:
+            #     operation(node)
             #     return
 
             # if node.left is not None:
