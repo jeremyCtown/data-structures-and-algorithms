@@ -61,12 +61,9 @@ class BST:
 
             if node is not None:
                 _walk(node.left)
-                # import pdb; pdb.set_trace()
                 node.val = operation(node.val)
                 _walk(node.right)
 
         _walk(self.root)
 
-
-# BST.in_order(fizzbuzztree)
 
