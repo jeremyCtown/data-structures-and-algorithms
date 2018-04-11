@@ -1,10 +1,11 @@
-# Largest Product
+# FizzBuzzTree
 
-Once you know a little more about lists, being able to use for loops to iterate through multiple lists becomes easier!
+it's amazing what you can do when your computer isn't foo'd!
 
 ## Challenge
-Write a function called LargestProduct which takes in a 2D array. Without utilizing any of the built-in methods available to your language, return the largest product of 2 adjacent values within the 2D array.
+Write a function called FizzBuzzTree which takes a tree as an argument.
+Without utilizing any of the built-in methods available to your language, determine weather or not the value of each node is divisible by 3, 5 or both, and change the value of each of the nodes respectively. Return the tree with it’s news values.
 
 ## Solution
 
-![](../../assets/04-largest-product.jpg)
+![](../../assets/16-fizzbuzztree.jpg)
