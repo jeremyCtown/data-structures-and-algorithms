@@ -15,7 +15,6 @@ def test_iterable_tree(iterable):
     """
     Tests a full bst with bft
     """
-
-    bft(iterable)
-    assert test_bst.root.val == 5
+    assert bft(iterable) == [6, 3, 15, 1, 5, 8, 30, 2, 13]
+    
 

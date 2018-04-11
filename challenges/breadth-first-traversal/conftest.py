@@ -8,5 +8,5 @@ def test_bst():
 
 @pytest.fixture
 def iterable():
-    return BST([6, 3, 15, 1, 5, 8, 30])
+    return BST([6, 3, 15, 1, 5, 8, 13, 30, 2])
 
