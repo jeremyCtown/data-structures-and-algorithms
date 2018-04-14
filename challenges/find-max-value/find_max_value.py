@@ -1,19 +1,19 @@
 from bst import BST as tree
 
 
-
 def find_max_value(tree):
     """
-    Prints out bst from top to bottom, left to right
+    Returns max value from a tree
     """
-    
-    max_val = 0
+    tree.in_order(set_root_value)
+    return tree.root.val
 
-    while tree.
-        if val > max_val:
-            max_val = val
-        return max_val
-        
-    tree.in_order(max_finder)
+def set_root_value(tree, node):
+    """
+    Sets root value to greatest value in tree
+    """
+    if tree.root.val is None:
+        raise AttributeError
 
-    return max_val
+    if tree.root.val < node.val:
+        tree.root.val = node.val

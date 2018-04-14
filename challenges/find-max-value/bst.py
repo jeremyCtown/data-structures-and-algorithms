@@ -48,7 +48,7 @@ class BST:
 
             if node is not None:
                 _walk(node.left)
-                operation(node.val)
+                operation(self, node)
                 _walk(node.right)
 
         _walk(self.root)
