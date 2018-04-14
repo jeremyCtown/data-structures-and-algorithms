@@ -88,20 +88,11 @@ class LinkedList:
         """
         returns node at kth from end
         """
+        if self._size - k < 0:
+            raise AttributeError
+
         current = self.head
-        counter = 0
-        answer = 0
-        kth = self._size - k
-
-        if self.head is None:
-            return None
-
-        while current._next is not None:
-            if counter == kth:
-                answer = current
-                break
-            else:
-                counter += 1
-                current = current._next
-        return answer
+        for i in range(self._size - k - 1):
+            current = current._next
+        return current
 

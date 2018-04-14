@@ -16,6 +16,9 @@ class BST:
         return self.root.val
 
     def insert(self, val):
+        """
+        Inserts a new node into tree
+        """
         node = Node(val)
         current = self.root
 
@@ -41,6 +44,9 @@ class BST:
         return node
 
     def in_order(self, operation):
+        """
+        Conducts operation in_order
+        """
 
         def _walk(node=None):
             if node is None:
@@ -48,12 +54,15 @@ class BST:
 
             if node is not None:
                 _walk(node.left)
-                operation(self, node)
+                operation(node)
                 _walk(node.right)
 
         _walk(self.root)
 
     def pre_order(self, operation):
+        """
+        Conducts operation pre_order
+        """
         def _walk(node=None):
 
             if node is not None:
@@ -64,6 +73,9 @@ class BST:
         _walk(self.root)
 
     def post_order(self, operation):
+        """
+        Conducts operation post_order
+        """
         def _walk(node=None):
 
             if node is not None:
