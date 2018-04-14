@@ -45,9 +45,9 @@ class BST:
 
     def in_order(self, operation):
         """
-        Conducts operation in_order
+        Operates on nodes from farthest left to 
+        farthest right
         """
-
         def _walk(node=None):
             if node is None:
                 return None
@@ -61,7 +61,8 @@ class BST:
 
     def pre_order(self, operation):
         """
-        Conducts operation pre_order
+        Operates on nodes starting at the root and 
+        moving left, then right
         """
         def _walk(node=None):
 
@@ -74,7 +75,9 @@ class BST:
 
     def post_order(self, operation):
         """
-        Conducts operation post_order
+        Operates on nodes starting on left side and 
+        moving bottom to top, then switching to right side 
+        before moving to root
         """
         def _walk(node=None):
 
