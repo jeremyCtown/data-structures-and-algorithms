@@ -9,7 +9,7 @@ def find_max_value(tree):
     
     max_val = 0
 
-    def max_finder(val, max_val):
+    while tree.
         if val > max_val:
             max_val = val
         return max_val

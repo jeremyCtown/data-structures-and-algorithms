@@ -7,4 +7,4 @@ Write a function called breadthFirstTraversal which takes a Binary Tree as its u
 
 ## Solution
 
-![](../../assets/16-breadth-first-traversal.jpg)
+![](../../assets/17-breadth-first-traversal.jpg)
