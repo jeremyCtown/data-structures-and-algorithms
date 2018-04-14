@@ -1,4 +1,4 @@
-
+import pytest
 
 def test_insert_first_node(empty_ll):
     assert empty_ll.head is None
@@ -39,13 +39,21 @@ def test_kth_from_end(empty_ll):
     empty_ll.insert(2)
     empty_ll.insert(3)
     empty_ll.insert(4)
-    assert empty_ll.kth_from_end(2).val == 3
+    assert empty_ll.kth_from_end(0).val == 2
+    assert empty_ll.kth_from_end(1).val == 3
+    assert empty_ll.kth_from_end(2).val == 4
 
 
 def test_kth_from_end_edge(empty_ll):
-    assert empty_ll.kth_from_end(1) is None
+    with pytest.raises(AttributeError):
+        empty_ll.kth_from_end(1)
 
 
 def test_kth_from_end_iterable(long_ll):
     assert long_ll._size == 10
-    assert long_ll.kth_from_end(3).val == 8
+    assert long_ll.kth_from_end(0).val == 10
+    assert long_ll.kth_from_end(1).val == 9
+    assert long_ll.kth_from_end(2).val == 8 
+    assert long_ll.kth_from_end(10).val == 1
+    with pytest.raises(AttributeError):
+        long_ll.kth_from_end(11)
