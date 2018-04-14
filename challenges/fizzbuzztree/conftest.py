@@ -1,5 +1,5 @@
 import pytest
-from fizzbuzztree import BST
+from bst import BST
 
 
 @pytest.fixture
