@@ -1,15 +1,17 @@
+from ../queue/queue import Queue
+
 from node import Node
 
 class KTree:
 
     def __init__(self):
-        self._root = Node()
+        self.root = Node()
 
     def __repr__(self):
-        return self._root
+        return self.root
 
     def __str__(self):
-        return 'Root Val: {}'.format(self._root.val)
+        return 'Root Val: {}'.format(self.root.val)
 
     def pre_order(self, operation):
         """
@@ -39,13 +41,33 @@ class KTree:
                 operation(node)
 
         _walk(self.root)
-    
+
+    def breadth_first_traversal(self, operation):
+        """
+        Performs operation on ktree from top to bottom, left to right
+        """
+        q = Queue()
+        q.enqueue(self.root)
+        test = [] # for testing purposes only
+
+        while q:
+            temp = q.front
+            out = q.dequeue().val.val
+            operation(out)
+            test.append(out) # for testing purposes only
+
+            if temp.val.left:
+                q.enqueue(temp.val.left)
+            if temp.val.right:
+                q.enqueue(temp.val.right)
+        return test
+        
     
     def insert(self, val, current):
         """
         Inserts a new node into the tree
         """
-        current = self._root
+        current = self.root
         
         if val is None:
             raise ValueError
