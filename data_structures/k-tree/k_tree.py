@@ -63,18 +63,22 @@ class KTree:
         return test
         
     
-    def insert(self, val, current):
+    def insert(self, parent_val, val):
         """
         Inserts a new node into the tree
         """
-        current = self.root
-        
-        if val is None:
-            raise ValueError
+        node = Node(val)
+
+        if self.root is None:
+            self.root = node
+            return
+
+        if parent_val is None:
+            self.root.add_child(node)
         
         if current and not current.val:
             temp = None
-
+"""
             for child in current.children:
                 if val[0] == child.val:
                     temp = child
