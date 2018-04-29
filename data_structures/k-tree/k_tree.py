@@ -78,32 +78,33 @@ class KTree:
         """Insert a new node into the KTree."""
         node = Node(val)
         q = Queue()
-        touched = [] #  purposed for testing
+        # touched = [] #  purposed for testing
+        current = self.root
 
         if self.root is None:
-            self.root = node
-            # import pdb; pdb.set_trace()            
-
+            self.root = node          
             self._size += 1
             return self.root
 
         if parent_val is None:
             self.root.add_child(node)
+            self._size += 1
             return
 
         q.enqueue(self.root)
         while len(q) > 0:
             current = q.dequeue()
+            # import pdb; pdb.set_trace()
             if current.val == parent_val:
                 current.add_child(node)
                 self._size += 1
                 return
-            touched.append(current.val) # purposed for testing
+            # touched.append(current.val) # purposed for testing
             for child in current.children:
                 q.enqueue(child)
-        return touched # purposed for testing
+        # return touched # purposed for testing
         
-        if current and not current.val:
-            temp = None
+        # if current and not current.val:
+        #     temp = None
 
 

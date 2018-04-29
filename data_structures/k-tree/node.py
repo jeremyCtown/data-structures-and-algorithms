@@ -6,7 +6,7 @@ class Node(object):
 
     
     def __repr__(self):
-        return (self.val, self.children)
+        return "Val: {}, Children: {}".format(self.val, self.children)
 
 
     def add_child(self, obj):
