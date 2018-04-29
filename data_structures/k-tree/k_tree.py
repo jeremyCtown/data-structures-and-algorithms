@@ -70,28 +70,20 @@ class KTree:
             raise(IndexError)
 
         q = Queue()
-        # order = [] # purposed for testing
         q.enqueue(self.root)
 
         while len(q) > 0:
     
             out = q.dequeue()
             operation(out)
-            # import pdb; pdb.set_trace()
-            # order.append(out) # purposed for testing
 
             for child in out.children:
-                q.enqueue(child)
-            # if temp.val.right:
-            #     q.enqueue(temp.val.right)
-        # return order # purposed for testing
-        
+                q.enqueue(child)    
     
     def insert(self, val=None, parent_val=None):
         """Insert a new node into the KTree."""
         node = Node(val)
         q = Queue()
-        # touched = [] #  purposed for testing
         current = self.root
 
         if self.root is None:
@@ -111,12 +103,8 @@ class KTree:
                 current.add_child(node)
                 self._size += 1
                 return
-            # touched.append(current.val) # purposed for testing
             for child in current.children:
                 q.enqueue(child)
-        # return touched # purposed for testing
-        
-        # if current and not current.val:
-        #     temp = None
+                
 
 
