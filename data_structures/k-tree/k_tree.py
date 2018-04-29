@@ -25,6 +25,10 @@ class KTree:
         Operate on nodes starting at the root 
         and moving left, then right.
         """
+        
+        if self.root is None:
+            raise(IndexError)
+
         def _walk(node=None):
             if node is None:
                 return
@@ -42,6 +46,10 @@ class KTree:
         moving bottom to top, then switching to right side 
         before moving to root.
         """
+
+        if self.root is None:
+            raise(IndexError)
+
         def _walk(node=None):
             if node is None:
                 return
@@ -57,21 +65,26 @@ class KTree:
         """
         Perform operation on ktree from top to bottom, left to right.
         """
+
+        if self.root is None:
+            raise(IndexError)
+
         q = Queue()
-        order = [] # purposed for testing
+        # order = [] # purposed for testing
         q.enqueue(self.root)
 
-        while q:
-            temp = q.front
-            out = q.dequeue().val.val
+        while len(q) > 0:
+    
+            out = q.dequeue()
             operation(out)
-            order.append(out) # purposed for testing
+            # import pdb; pdb.set_trace()
+            # order.append(out) # purposed for testing
 
-            if temp.val.left:
-                q.enqueue(temp.val.left)
-            if temp.val.right:
-                q.enqueue(temp.val.right)
-        return order # purposed for testing
+            for child in out.children:
+                q.enqueue(child)
+            # if temp.val.right:
+            #     q.enqueue(temp.val.right)
+        # return order # purposed for testing
         
     
     def insert(self, val=None, parent_val=None):
@@ -94,7 +107,6 @@ class KTree:
         q.enqueue(self.root)
         while len(q) > 0:
             current = q.dequeue()
-            # import pdb; pdb.set_trace()
             if current.val == parent_val:
                 current.add_child(node)
                 self._size += 1
