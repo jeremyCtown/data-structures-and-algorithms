@@ -1,4 +1,4 @@
-from ../queue/queue import Queue
+from k_queue import Queue
 
 from node import Node
 
@@ -7,9 +7,10 @@ class KTree:
     Create a new KTree.
     """
 
-    def __init__(self):
+    def __init__(self, val=None):
         """Initialize KTree"""
-        self.root = Node()
+        self.root = None
+        self._size = 0
 
     def __repr__(self):
         """Magic repr."""
@@ -54,7 +55,7 @@ class KTree:
 
     def breadth_first_traversal(self, operation):
         """
-        Perform operation on ktree from top to bottom, left to right
+        Perform operation on ktree from top to bottom, left to right.
         """
         q = Queue()
         order = [] # purposed for testing
@@ -73,7 +74,7 @@ class KTree:
         return order # purposed for testing
         
     
-    def insert(self, parent_val, val=None):
+    def insert(self, val=None, parent_val=None):
         """Insert a new node into the KTree."""
         node = Node(val)
         q = Queue()
@@ -81,15 +82,17 @@ class KTree:
 
         if self.root is None:
             self.root = node
+            # import pdb; pdb.set_trace()            
+
             self._size += 1
-            return
+            return self.root
 
         if parent_val is None:
             self.root.add_child(node)
             return
 
         q.enqueue(self.root)
-        while len(queue) > 0:
+        while len(q) > 0:
             current = q.dequeue()
             if current.val == parent_val:
                 current.add_child(node)
