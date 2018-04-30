@@ -47,9 +47,7 @@ Doc strings are gud
                 return new_node._next
 
     def find(self, val):
-        """
-        Searches through a list for val and returns the node with that val
-        """
+        """Search through a list for val and return node with that val."""
 
         current = self.head
         while current:
@@ -60,9 +58,7 @@ Doc strings are gud
         return False
 
     def insert_before(self, val, new_val):
-        """
-        inserts node before node at val
-        """
+        """Insert node before node at val."""
         new_node = Node(new_val)
         current = self.head._next
         while current._next is not None:
