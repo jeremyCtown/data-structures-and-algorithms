@@ -24,27 +24,6 @@ class HashTable:
 
     def set(self, key, val):
         """Set a node into the hash table."""
-        # hash the key; get a location for the bucket to insert into
-        # set val into bucket
-
-        # You will handle collisions here...
-        # Your values may look something like a DB record, any of which could be the key:
-            # {
-            #     'id': '123',
-            #     'name': 'xxx',
-            #     'title': 'zzz',
-            # }
-        
-        # # this works
-        # idx = self.hash_key(key)
-        # self.buckets[idx] = val
-
-        # this is refactored version
-        # self.buckets[self.hash_key(key)] = val
-        # ---------------------------#
-        
-        # Hash the key for a location in buckets
-        # hashed_key = self.hash_key(key)
         return self.buckets[self.hash_key(key)].insert({key:val})
 
 
