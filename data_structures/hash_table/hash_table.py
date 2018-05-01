@@ -14,17 +14,12 @@ class HashTable:
         if type(key) is not str:
             raise TypeError
 
-        # iterate through key and convert each char to ascii char code
-        # sum all char codes for a total int value
-        # return => mod total by number of buckets
-
-        # # this works
         sum = 0
         for char in key:
             sum += ord(char)
         return sum % self.buckets
 
-        # and so does this
+        # this also works
         # return reduce(lambda a, b: a + ord(b), list(key), 0) % self.buckets
 
     def set(self, key, val):
