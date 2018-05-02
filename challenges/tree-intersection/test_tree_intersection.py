@@ -1,4 +1,4 @@
 
 
-def test_repeated_word(self):
+def test_tree_intersection(self):
     pass
