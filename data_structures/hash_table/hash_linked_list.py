@@ -11,31 +11,20 @@ Doc strings are gud
             self.insert(item)
 
     def __repr__(self):
-        """
-        assumes head will have a val and we will need this
-        """
+        """Return value of head."""
         return '<head> => {}'.format(self.head.val)
 
-    def __str__(self):
-        """ this is where we can see the list"""
-
     def __len__(self):
-        """
-        returns size of LL
-        """
+        """Return size of LL."""
         return self._size
 
     def insert(self, val):
-        """
-        basic insertion method for adding to front of LL
-        """
+        """Insert node at head of LL."""
         self.head = Node(val, self.head)
         self._size += 1
 
     def append(self, val):
-        """
-        appends node to the end of the LL
-        """
+        """Append node to the end of the LL."""
         new_node = Node(val, None)
         current = self.head._next
         while current._next is not None:
@@ -74,9 +63,7 @@ Doc strings are gud
             raise ValueError("Data not in list")
 
     def insert_after(self, val, new_val):
-        """
-        inserts node after node at val
-        """
+        """Inserts node after node at val."""
         new_node = Node(new_val)
         current = self.head._next
         while current._next is not None:
@@ -92,9 +79,7 @@ Doc strings are gud
             raise ValueError("Data not in list")
 
     def kth_from_end(self, k):
-        """
-        returns node at kth from end
-        """
+        """Returns node at kth from end."""
         current = self.head
         counter = 0
         answer = 0
