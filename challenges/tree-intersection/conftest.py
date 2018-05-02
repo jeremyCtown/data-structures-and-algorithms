@@ -1,4 +1,4 @@
-from ../binary_search_tree/bst import BST
+from bst import BST
 import pytest
 
 def test_BST():
