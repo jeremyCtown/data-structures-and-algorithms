@@ -9,6 +9,3 @@ class Node:
     def __str__(self):
         return '{val}'.format(val=self.val)
 
-    def get_val(self):
-        return self.val
-

@@ -1,7 +1,8 @@
+from node import Node
+
 class LinkedList:
-"""
-Doc strings are gud
-"""
+    """This is a Linked List"""
+
     def __init__(self, iter=[]):
         self.head = None
         self._size = 0
