@@ -10,6 +10,7 @@ class HashTable:
         """Initialize a hash_table."""
         self.max_size = max_size
         self.buckets = [LL() for _ in range(self.max_size)]
+        self._size = 0
 
     def hash_key(self, key):
         """Generate a hash_key."""
@@ -27,10 +28,11 @@ class HashTable:
     def set(self, key, val):
         """Set a node into the hash table."""
         self.buckets[self.hash_key(key)].insert({key:val})
+        self._size += 1
 
     def get(self, key, filter=None):
         """Return a node from a hash table."""
-        current = self.buckets[self._hash_key(key)].head
+        current = self.buckets[self.hash_key(key)].head
         while current:
             if key in current.val.keys():
                 return current.val[key]
@@ -38,7 +40,10 @@ class HashTable:
 
     def remove(self, key):
         """Remove value from bucket."""
-        remove = self.buckets[self._hash_key(key)]
+        remove = self.buckets[self.hash_key(key)]
+
+        if remove is None:
+            raise KeyError("Key not found")
 
         current = remove.head
         last = current
@@ -46,6 +51,7 @@ class HashTable:
         if key in current.val.keys():
             deleted = current
             current = current._next
+            self._size -= 1
             return deleted
 
         while current:
@@ -53,7 +59,10 @@ class HashTable:
                 deleted = current
                 current = current._next
                 last._next = current
+                self._size -= 1
                 return deleted
             else:
                 last = current
                 current = current._next
+
+        

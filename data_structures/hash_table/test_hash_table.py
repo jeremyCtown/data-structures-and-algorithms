@@ -83,5 +83,40 @@ def test_set_accepts_dicts(test_hasher):
     
 
 def test_get_gets_things(test_hasher):
+    """Test get returns key/value pair."""
+    test_hasher.set('wtf', {'watup':'dude'})
+    assert test_hasher.get('wtf') == {'watup':'dude'}
 
+
+def test_one_key_gets_multiple_things(test_hasher):
+    """Test get returns key/value pair."""
+    test_hasher.set('wtf', 'dude')
+    test_hasher.set('wtf', 'watup')
+    assert test_hasher.get('wtf') == 'watup','dude'
+
+
+def test_key_does_not_get_other_things(test_hasher):
+    """Test key does not return all the things."""
+    test_hasher.set('wtf', 'dude')
+    test_hasher.set('wtf', 'watup')
+    test_hasher.set('woot', 'wtf')
+    assert test_hasher.get('wtf') != 'wtf'
+
+
+def test_remove_pulls_key_value(test_hasher):
+    """Test remove method removes node at key."""
+    test_hasher.set('wtf', 'watup')
+    test_hasher.set('woot', 'wtf')
+    test_hasher.set('dude', 'is chill')
+    assert test_hasher.remove('dude').val == {'dude': 'is chill'} 
+
+
+def test_remove_decreases_size(test_hasher):
+    """Test remove method reduces number of records."""
+    test_hasher.set('wtf', 'watup')
+    test_hasher.set('woot', 'wtf')
+    test_hasher.set('dude', 'is chill')
+    assert test_hasher._size == 3
+    test_hasher.remove('dude').val == {'dude': 'is chill'} 
+    assert test_hasher._size == 2
 
