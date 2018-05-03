@@ -103,12 +103,18 @@ def test_key_does_not_get_other_things(test_hasher):
     assert test_hasher.get('wtf') != 'wtf'
 
 
-def test_remove_pulls_key_value(test_hasher):
+def test_remove_pulls_key_value_single_record(test_hasher):
+    """Test remove method removes node at key."""
+    test_hasher.set('dude', 'is chill')
+    assert test_hasher.remove('dude').val == {'dude': 'is chill'} 
+
+
+def test_remove_pulls_key_value_multiple_records(test_hasher):
     """Test remove method removes node at key."""
     test_hasher.set('wtf', 'watup')
     test_hasher.set('woot', 'wtf')
     test_hasher.set('dude', 'is chill')
-    assert test_hasher.remove('dude').val == {'dude': 'is chill'} 
+    assert test_hasher.remove('woot').val == {'woot': 'wtf'} 
 
 
 def test_remove_decreases_size(test_hasher):

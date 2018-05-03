@@ -42,9 +42,6 @@ class HashTable:
         """Remove value from bucket."""
         remove = self.buckets[self.hash_key(key)]
 
-        if remove is None:
-            raise KeyError("Key not found")
-
         current = remove.head
         last = current
 
