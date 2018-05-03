@@ -1,10 +1,15 @@
 from ../hash_table/hash_table import HashTable as ht
 
-def repeated_word(string):
-    new_string = string.split('')
+def left_join(ht1, ht2):
+    
+    left = ht1
+    right = ht2
 
-    for word in new_string:
-        ht.set()
-        if word in ht:
-            return word
+    for bucket in right.buckets:
+        if right.bucket.key in left.bucket:
+            left.buckets.key += ' ,{}'.format(right.bucket.key.value)
+    return left
+
+
+
 

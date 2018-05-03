@@ -1,4 +1,4 @@
 
 
-def test_repeated_word(self):
+def test_left_join(self):
     pass
