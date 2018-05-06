@@ -24,7 +24,7 @@ class HashTable:
 
     def set(self, key, val):
         """Set a node into the hash table."""
-        self.buckets[self.hash_key(key)].insert({key:val})
+        self.buckets[self.hash_key(key)].append({key:val})
         self._size += 1
 
     def get(self, key, filter=None):

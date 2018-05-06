@@ -63,8 +63,8 @@ def test_set_collisions_create_multiple_records(test_hasher):
     """Test collisions create separate records."""
     test_hasher.set('cat', 'dog')
     test_hasher.set('act', 'out')
-    assert test_hasher.buckets[312].head.val['act'] == 'out'
-    assert test_hasher.buckets[312].head._next.val['cat'] == 'dog'
+    assert test_hasher.buckets[312].head.val['cat'] == 'dog'
+    assert test_hasher.buckets[312].head._next.val['act'] == 'out'
     assert test_hasher.buckets[312]._size == 2
 
 
@@ -90,8 +90,8 @@ def test_get_gets_things(test_hasher):
 
 def test_one_key_gets_multiple_things(test_hasher):
     """Test get returns key/value pair."""
-    test_hasher.set('wtf', 'dude')
     test_hasher.set('wtf', 'watup')
+    test_hasher.set('wtf', 'dude')
     assert test_hasher.get('wtf') == ['watup','dude']
 
 

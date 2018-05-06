@@ -26,15 +26,23 @@ class LinkedList:
 
     def append(self, val):
         """Append node to the end of the LL."""
+
         new_node = Node(val, None)
-        current = self.head._next
-        while current._next is not None:
-            current._next = current._next._next
-            if current._next._next is None:
-                current._next._next = new_node
+        
+        if self.head is None:
+            self.head = Node(val, self.head)
+            self._size += 1
+            return self.head
+
+        current = self.head
+        while current is not None:
+            if current._next is None:
+                current._next = new_node
                 new_node._next is None
                 self._size += 1
-                return new_node._next
+                return new_node
+
+            current = current._next
 
     def find(self, val):
         """Search through a list for val and return node with that val."""
