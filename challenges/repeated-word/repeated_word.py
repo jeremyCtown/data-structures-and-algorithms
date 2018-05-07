@@ -5,11 +5,14 @@ def repeated_word(string):
     new_string = string.split()
     table = ht()
 
+    if len(new_string) < 1:
+        return 'Empty string'
+
     for word in new_string:
         check_word = table.get(word)
-        if check_word is not None:
+        if len(check_word) == 1:
             return word
         table.set(word, 1)
     
-    raise KeyError('No words repeat')
+    return 'No words repeat'
 
