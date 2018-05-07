@@ -63,8 +63,8 @@ def test_set_collisions_create_multiple_records(test_hasher):
     """Test collisions create separate records."""
     test_hasher.set('cat', 'dog')
     test_hasher.set('act', 'out')
-    assert test_hasher.buckets[312].head.val['act'] == 'out'
-    assert test_hasher.buckets[312].head._next.val['cat'] == 'dog'
+    assert test_hasher.buckets[312].head.val['cat'] == 'dog'
+    assert test_hasher.buckets[312].head._next.val['act'] == 'out'
     assert test_hasher.buckets[312]._size == 2
 
 
@@ -85,14 +85,14 @@ def test_set_accepts_dicts(test_hasher):
 def test_get_gets_things(test_hasher):
     """Test get returns key/value pair."""
     test_hasher.set('wtf', {'watup':'dude'})
-    assert test_hasher.get('wtf') == {'watup':'dude'}
+    assert test_hasher.get('wtf') == [{'watup':'dude'}]
 
 
 def test_one_key_gets_multiple_things(test_hasher):
     """Test get returns key/value pair."""
-    test_hasher.set('wtf', 'dude')
     test_hasher.set('wtf', 'watup')
-    assert test_hasher.get('wtf') == 'watup','dude'
+    test_hasher.set('wtf', 'dude')
+    assert test_hasher.get('wtf') == ['watup','dude']
 
 
 def test_key_does_not_get_other_things(test_hasher):
@@ -106,10 +106,12 @@ def test_key_does_not_get_other_things(test_hasher):
 def test_remove_pulls_key_value_single_record(test_hasher):
     """Test remove method removes node at key."""
     test_hasher.set('dude', 'is chill')
+    assert test_hasher._size == 1
     assert test_hasher.remove('dude').val == {'dude': 'is chill'} 
+    assert test_hasher._size == 0
 
 
-def test_remove_pulls_key_value_multiple_records(test_hasher):
+def test_remove_pulls_key_value_from_multiple_records(test_hasher):
     """Test remove method removes node at key."""
     test_hasher.set('wtf', 'watup')
     test_hasher.set('woot', 'wtf')
@@ -117,12 +119,22 @@ def test_remove_pulls_key_value_multiple_records(test_hasher):
     assert test_hasher.remove('woot').val == {'woot': 'wtf'} 
 
 
-def test_remove_decreases_size(test_hasher):
+def test_remove_false_key_raises_error(test_hasher):
     """Test remove method reduces number of records."""
-    test_hasher.set('wtf', 'watup')
-    test_hasher.set('woot', 'wtf')
     test_hasher.set('dude', 'is chill')
-    assert test_hasher._size == 3
-    test_hasher.remove('dude').val == {'dude': 'is chill'} 
-    assert test_hasher._size == 2
+    with pytest.raises(ValueError):
+        test_hasher.remove('woot')
+
+
+def test_remove_actually_removes_key(test_hasher):
+    """Test remove method reduces number of records."""
+    test_hasher.set('dude', 'is chill')
+    assert test_hasher.remove('dude').val == {'dude': 'is chill'}
+    assert test_hasher._size == 0
+    with pytest.raises(ValueError):
+        test_hasher.remove('dude')
+
+
+
+
 

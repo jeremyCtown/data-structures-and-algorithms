@@ -1,6 +1,4 @@
 from hash_linked_list import LinkedList as LL
-# from node import Node
-from functools import reduce
 
 
 class HashTable:
@@ -22,44 +20,46 @@ class HashTable:
             sum += ord(char)
         return sum % len(self.buckets)
 
-        # this also works
-        # return reduce(lambda a, b: a + ord(b), list(key), 0) % self.buckets
-
     def set(self, key, val):
         """Set a node into the hash table."""
-        self.buckets[self.hash_key(key)].insert({key:val})
+        self.buckets[self.hash_key(key)].append({key:val})
         self._size += 1
 
     def get(self, key, filter=None):
         """Return a node from a hash table."""
         current = self.buckets[self.hash_key(key)].head
+        result = []
         while current:
             if key in current.val.keys():
-                return current.val[key]
+                result.append(current.val[key])
             current = current._next
+        return result
 
     def remove(self, key):
         """Remove value from bucket."""
-        remove = self.buckets[self.hash_key(key)]
+        bucket = self.buckets[self.hash_key(key)]
+        current = bucket.head
 
-        current = remove.head
-        last = current
+        if current is None:
+            raise ValueError('Key is not in hash table')
 
-        if key in current.val.keys():
+        if key in bucket.head.val.keys():
             deleted = current
-            current = current._next
+            bucket.head = current._next
+            current = None
             self._size -= 1
             return deleted
 
         while current:
             if key in current.val.keys():
                 deleted = current
-                current = current._next
-                last._next = current
+                last._next = current._next
+                current = None
                 self._size -= 1
                 return deleted
-            else:
-                last = current
-                current = current._next
+
+            last = current
+            current = current._next
+
 
         
