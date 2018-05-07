@@ -1,6 +1,4 @@
 from hash_linked_list import LinkedList as LL
-# from node import Node
-from functools import reduce
 
 
 class HashTable:
