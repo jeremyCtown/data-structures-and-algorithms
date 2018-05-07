@@ -10,4 +10,6 @@ def repeated_word(string):
         if check_word is not None:
             return word
         table.set(word, 1)
+    
+    raise KeyError('No words repeat')
 
