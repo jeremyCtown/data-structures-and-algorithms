@@ -10,6 +10,11 @@ def merge(L, R):
             ordered_list.append(R[0])
             R.remove(R[0])
     
+    if len(L) == 0:
+        ordered_list += R
+    if len(R) == 0:
+        ordered_list += L
+    
     return ordered_list
 
 
@@ -21,4 +26,4 @@ def mergesort(lst):
         midpoint = len(lst)/2
         L = mergesort(lst[midpoint:])
         R = mergesort(lst[:midpoint])
-        return merge(L,R)
+        return merge(L, R)
