@@ -1,10 +1,11 @@
-# Find-Maximum-Value-In-Tree
+# Mergesort
 
-Ugh... I'm covered in foo and so is my brain
+Like oil and water, this is definitely going to work...
 
 ## Challenge
-Write a function called find-maximum-value which takes binary tree as its only imput. Without utilizing any of the built-in methods available to your language, return the maximum value stored in the tree. You can assume that the values stored in the Binary Tree will be numeric.
+
+Write a function that accepts an array of unsorted integers, and returns a sorted array by a recursive mergesort algorithm.
 
 ## Solution
 
-![](../../assets/18-find-max-value.jpg)
+![](../../assets/36-mergesort.jpg)

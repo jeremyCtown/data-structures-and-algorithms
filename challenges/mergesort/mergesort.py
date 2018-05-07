@@ -1,19 +1,24 @@
-from bst import BST as tree
+
+def merge(L, R):
+    """Merge two lists."""
+    ordered_list = []
+    while len(L) != 0 and len(R) != 0:
+        if L[0] < R[0]:
+            ordered_list.append(L[0])
+            L.remove(L[0])
+        else:
+            ordered_list.append(R[0])
+            R.remove(R[0])
+    
+    return ordered_list
 
 
-def find_max_value(tree):
-    """
-    Returns max value from a tree
-    """
-    tree.in_order(set_root_value)
-    return tree.root.val
-
-def set_root_value(tree, node):
-    """
-    Sets root value to greatest value in tree
-    """
-    if tree.root.val is None:
-        raise AttributeError
-
-    if tree.root.val < node.val:
-        tree.root.val = node.val
+def mergesort(lst):
+    """Recursive function to order a list."""
+    if len(lst) < 2:
+        return lst
+    else:
+        midpoint = len(lst)/2
+        L = mergesort(lst[midpoint:])
+        R = mergesort(lst[:midpoint])
+        return merge(L,R)
