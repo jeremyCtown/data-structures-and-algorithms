@@ -25,32 +25,3 @@ def selection_largest_first(lst):
 
     return lst
 
-
-# def selection(lst):
-
-#     for i in range(len(lst)):
-#         min_i = min(lst[i:]) #find maximum element
-#         min_index = lst[i:].index(min_i) #find index of maximum element
-#         lst[i + min_index] = lst[i] #replace element at min_index with first element
-#         lst[i] = min_i                 #replace first element with min element
-#     return lst
-
-
-# def selection(lst):
-#     """
-#     Find the smallest element in the list and put it (swap it) in the first location, 
-#     Find the second element and put it (swap it) in the second locaiton, and so on. 
-#     """
-#     for i in range(len(lst) - 1):
-#         minIndx = i
-#         minVal= lst[i]
-#         j = i + 1
-#         while j < len(lst):
-#             if minVal > lst[j]:
-#                 minIndx = j
-#                 minVal= lst[j]
-#             j += 1
-#         temp = lst[i]
-#         lst[i] = lst[minIndx]
-#         lst[minIndx] = temp 
-#     return lst
