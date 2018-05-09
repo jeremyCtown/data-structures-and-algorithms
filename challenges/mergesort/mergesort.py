@@ -24,6 +24,6 @@ def mergesort(lst):
         return lst
     else:
         midpoint = len(lst)/2
-        L = mergesort(lst[midpoint:])
-        R = mergesort(lst[:midpoint])
+        L = mergesort(lst[midpoint::])
+        R = mergesort(lst[::midpoint])
         return merge(L, R)

@@ -1,15 +1,23 @@
-# Mergesort
+# Quicksort
 
-Like oil and water, this is definitely going to work...
+The only thing quick about this assignment was my willingness to walk away until tomorrow...
 
 ## Challenge
 
-Write a function that accepts an array of unsorted integers, and returns a sorted array by a recursive mergesort algorithm.
+Feature Tasks
+- Write a function that accepts an array of integers, and returns an array sorted by a recursive quicksort algorithm.
+
+Structure and Testing
+- Utilize the Single-responsibility principle: any methods you write should be clean, reusable, abstract component parts to the whole challenge. 
+
+- Write at least three test assertions for each method that you define.
+
+- Ensure your tests are passing before you submit your solution.
 
 ## Solution
 
-![](../../assets/36-mergesort.jpg)
+![](../../assets/37-quicksort.jpg)
 
 ### Resources
 
-https://pythonandr.com/2015/07/05/the-merge-sort-python-code/
+The internets
