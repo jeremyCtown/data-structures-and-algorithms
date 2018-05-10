@@ -1,33 +1,33 @@
 import pytest
-from quicksort import quicksort
+from radixsort import radixsort
 
 
 def test_empty_list_returns_empty_list():
-    """Test quicksort on empty list returns same."""
+    """Test radixsort on empty list returns same."""
     empty = []
-    assert quicksort(empty) == []
+    assert radixsort(empty) == []
 
 
 def test_list_with_one_value():
-    """Test quicksort on empty list returns same."""
+    """Test radixsort on empty list returns same."""
     lst = [8]
-    assert quicksort(lst) == [8]
+    assert radixsort(lst) == [8]
 
 
 def test_list_with_two_values():
-    """Test quicksort on empty list returns same."""
-    lst = [8, 3]
-    assert quicksort(lst) == [3, 8]
+    """Test radixsort on empty list returns same."""
+    lst = [18, 3]
+    assert radixsort(lst) == [3, 18]
 
 
 def test_list_with_odd_number_of_values():
     """Test odd number of values returns ordered list."""
-    lst = [8, 3, 7, 9, 5]
-    assert quicksort(lst) == [3, 5, 7, 8, 9]
+    lst = [18, 3, 27, 49, 95]
+    assert radixsort(lst) == [3, 18, 27, 49, 95]
 
 
-def test_list_with_unbalanced_halves():
+def test_list_with_triple_digits():
     """Test list heavy weighted on one half returns ordered list."""
-    lst = [2, 4, 3, 8, 1, 9, 10, 13]
-    assert quicksort(lst) == [1, 2, 3, 4, 8, 9, 10, 13]
+    lst = [22, 44, 33, 88, 11, 99, 0, 113]
+    assert radixsort(lst) == [0, 11, 22, 33, 44, 88, 99, 113]
 

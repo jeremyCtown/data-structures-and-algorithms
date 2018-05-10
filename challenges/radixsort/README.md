@@ -1,11 +1,11 @@
-# Quicksort
+# Radixsort
 
-The only thing quick about this assignment was my willingness to walk away until tomorrow...
+Google "radixsort python" and that's how you do this
 
 ## Challenge
 
 Feature Tasks
-- Write a function that accepts an array of integers, and returns an array sorted by a recursive quicksort algorithm.
+- Write a function that accepts an array of integers, and returns an array sorted by a radixsort algorithm.
 
 Structure and Testing
 - Utilize the Single-responsibility principle: any methods you write should be clean, reusable, abstract component parts to the whole challenge. 
@@ -16,7 +16,7 @@ Structure and Testing
 
 ## Solution
 
-![](../../assets/37-quicksort.jpg)
+![](../../assets/38-radixsort.jpg)
 
 ### Resources
 
