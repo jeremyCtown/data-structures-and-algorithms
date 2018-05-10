@@ -10,20 +10,21 @@ def radixsort(lst):
 
     while not max_length:
         max_length = True
-        buckets = (list[for _ in range(radix_buckets)])
+        buckets = [list()for _ in range(radix_buckets)]
 
         for i in lst:
             temp = i//mover
-            bucket[temp//radix_buckets].append(i)
-            if max_length and temp = 0:
+            buckets[temp%radix_buckets].append(i)
+            if max_length and temp > 0:
                 max_length = False
 
-    counter = 0
-    for j in range(radix_buckets):
-        empty_bucket = buckets[j]
-        for i in empty_bucket:
-            list[counter] = i
-            counter += 1
-        placer *= radix_buckets
+        counter = 0
+        for j in range(radix_buckets):
+            empty_bucket = buckets[j]
+            for i in empty_bucket:
+                lst[counter] = i
+                counter += 1
+        
+        mover *= radix_buckets
     
     return lst

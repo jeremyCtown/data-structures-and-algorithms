@@ -20,4 +20,5 @@ Structure and Testing
 
 ### Resources
 
-The internets
+https://en.wikipedia.org/wiki/Radix_sort
+http://www.geekviewpoint.com/python/sorting/radixsort
