@@ -31,3 +31,8 @@ def test_list_with_unbalanced_halves():
     lst = [2, 4, 3, 8, 1, 9, 10, 13]
     assert quicksort(lst) == [1, 2, 3, 4, 8, 9, 10, 13]
 
+
+def test_list_with_few_values():
+    """Test list with few distinct values returns sorted list."""
+    lst = [3, 1, 8, 3, 1, 23, 8, 3, 23, 1, 8, 23]
+    assert quicksort(lst) == [1, 1, 1, 3, 3, 3, 8, 8, 8, 23, 23, 23]
